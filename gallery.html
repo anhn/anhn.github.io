@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Activities Photo Album</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            margin: 20px;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+        .popup:target {
+            display: flex;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="right-column">
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="gallery.html">Publications</a></li>
+                </ul>
+            </nav>
+
+            <header>
+                <h1>Professional Activities Photo Album</h1>
+            </header>
+
+            <section id="services">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <a href="#img1"><img src="photo1.jpg" alt="Activity 1"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img2"><img src="photo2.jpg" alt="Activity 2"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img3"><img src="photo3.jpg" alt="Activity 3"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img4"><img src="photo4.jpg" alt="Activity 4"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img5"><img src="photo5.jpg" alt="Activity 5"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img6"><img src="photo6.jpg" alt="Activity 6"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img7"><img src="photo7.jpg" alt="Activity 7"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img8"><img src="photo8.jpg" alt="Activity 8"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img9"><img src="photo9.jpg" alt="Activity 9"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img10"><img src="photo10.jpg" alt="Activity 10"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img11"><img src="photo11.jpg" alt="Activity 11"></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="#img12"><img src="photo12.jpg" alt="Activity 12"></a>
+                    </div>
+                </div>
+
+                <!-- Popup for images -->
+                <div id="img1" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo1.jpg" alt="Activity 1">
+                </div>
+                <div id="img2" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo2.jpg" alt="Activity 2">
+                </div>
+                <div id="img3" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo3.jpg" alt="Activity 3">
+                </div>
+                <div id="img4" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo4.jpg" alt="Activity 4">
+                </div>
+                <div id="img5" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo5.jpg" alt="Activity 5">
+                </div>
+                <div id="img6" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo6.jpg" alt="Activity 6">
+                </div>
+                <div id="img7" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo7.jpg" alt="Activity 7">
+                </div>
+                <div id="img8" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo8.jpg" alt="Activity 8">
+                </div>
+                <div id="img9" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo9.jpg" alt="Activity 9">
+                </div>
+                <div id="img10" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo10.jpg" alt="Activity 10">
+                </div>
+                <div id="img11" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo11.jpg" alt="Activity 11">
+                </div>
+                <div id="img12" class="popup">
+                    <a href="#" class="close">&times;</a>
+                    <img src="photo12.jpg" alt="Activity 12">
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>
