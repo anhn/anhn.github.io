@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Anh Nguyen-Duc</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* Custom bullet points for ul > li */
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding-left: 20px; /* Add some left padding */
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px; /* Space for the custom bullet */
+            margin-bottom: 10px; /* Spacing between list items */
+        }
+
+        ul li:before {
+            content: "•"; /* Custom bullet character */
+            color: #0077cc; /* Bullet color */
+            font-size: 1.5em; /* Adjust bullet size */
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(-10%);
+        }
+
+        /* Style for links inside lists */
+        ul li a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,19 +54,58 @@
             </nav>
 
             <header>
-                <h1>Services</h1>
+                <h1>Our Services</h1>
             </header>
 
-            <section id="services">
-                <h2>Startup Consultancy</h2>
-                <p>With extensive research and practical experience, I provide consultancy to software startups, helping them navigate challenges from prototyping to market entry.</p>
+            <!-- Layer 1: Startup Consultancy -->
+            <div class="service-layer">
+                <div class="image-column">
+                    <img src="service1.jpg" style="max-width: 200px;" alt="Startup Consultancy Image">
+                </div>
+                <div class="text-content">
+                    <h2>Startup Consultancy</h2>
+                    <p>With extensive research and practical experience, I provide consultancy to software startups, helping them navigate challenges from prototyping to market entry. My consultancy covers key areas such as:</p>
+                    <ul>
+                        <li>Prototyping and Product Validation: Guiding startups through the process of turning ideas into prototypes, testing them in the market, and refining based on user feedback</li>
+                        <li>Business Development Strategies: Helping startups define their business models, identify market opportunities, and create sustainable growth strategies.</li>
+                    </ul>                
+                </div>
+            </div>
 
-                <h2>Software Development Consultancy</h2>
-                <p>I offer guidance on software development methodologies, agile practices, and quality assurance based on years of academic research and industrial collaboration.</p>
+            <!-- Layer 2: Software Development Consultancy -->
+            <div class="service-layer">
+                <div class="text-content">
+                    <h2>Software Development Consultancy</h2>
+                    <p>I offer guidance on software development methodologies, agile practices, and quality assurance based on years of academic research and industrial collaboration. Key aspects of this service include:</p>
+                    <ul>
+                        <li>Agile Methodology Implementation: Offering advice on how to implement agile frameworks, such as Scrum or Kanban, in different organizational contexts to increase team efficiency and product delivery cycles.</li>
+                        <li>Software Quality Assurance: Ensuring that software development practices are aligned with industry standards and best practices to enhance quality control, automated testing, and continuous integration.</li>
+                        <li>Process Optimization: Helping organizations streamline their software development processes to reduce waste, enhance productivity, and ensure that teams can adapt to changing project requirements.</li>
+                        <li>Technical Debt and Refactoring: Assisting organizations in managing technical debt through code refactoring, ensuring long-term maintainability and scalability of their software products</li>
+                    </ul>   
+                </div>
+                <div class="image-column">
+                    <img src="service3.jpg" style="max-width: 200px;" alt="Software Development Consultancy Image">
+                </div>
+            </div>
 
-                <h2>AI and Generative AI Training and Consultancy</h2>
-                <p>Specialized in AI engineering and generative AI, I provide training and consultancy to organizations interested in applying AI technologies in their products or services.</p>
-            </section>
+            <!-- Layer 3: Generative AI Training -->
+            <div class="service-layer">
+                <div class="image-column">
+                    <img src="service2.jpg" style="max-width: 200px;" alt="Generative AI Training Image">
+                </div>
+                <div class="text-content">
+                    <h2>Generative AI Training and Consultancy</h2>
+                    <p>Specialized in AI engineering and generative AI, I provide training and consultancy to organizations interested in applying AI technologies in their products or services.  This service includes:</p>
+                    <ul>
+                        <li>Generative AI Integration: Assisting companies in exploring and deploying generative AI tools like large language models, image synthesis, and natural language processing to create innovative products and solutions.</li>
+                        <li>Generative AI Integration: Assisting companies in exploring and deploying generative AI tools like large language models, image synthesis, and natural language processing to create innovative products and solutions.</li>
+                        <li>Workforce Training: Providing specialized training programs to upskill employees on the latest AI and generative AI technologies, helping them understand AI fundamentals, practical implementation, and troubleshooting common AI-related challenges.</li>
+                        <li>Ethical AI Implementation: Ensuring organizations are aware of and adhere to ethical considerations in AI, including bias mitigation, transparency, fairness, and accountability in AI systems.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
