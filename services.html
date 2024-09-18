@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
         /* Custom bullet points for ul > li */
-        div ul {
+        div > ul {
             list-style-type: none; /* Remove default bullet points */
             padding-left: 20px; /* Add some left padding */
         }
 
-       div ul li {
+       div > ul li {
             position: relative;
             padding-left: 25px; /* Space for the custom bullet */
             margin-bottom: 10px; /* Spacing between list items */
         }
 
-        div ul li:before {
+        div > ul li:before {
             content: "•"; /* Custom bullet character */
             color: #0077cc; /* Bullet color */
             font-size: 1.5em; /* Adjust bullet size */
@@ -29,12 +29,12 @@
         }
 
         /* Style for links inside lists */
-        div ul li a {
+        div > ul li a {
             color: #0077cc;
             text-decoration: none;
         }
 
-        div ul li a:hover {
+        div > ul li a:hover {
             text-decoration: underline;
         }
     </style>
