@@ -100,8 +100,9 @@ ol li {
 }
 
 ol li + li {
-  margin-top: 5px;
+    margin-top: 5px;
 }
+
 a {
     color: #0077cc;
     text-decoration: none;
@@ -109,6 +110,36 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Two-Column Layout for Services */
+.service-layer {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.service-layer:nth-child(odd) .text-content {
+    order: 2;
+}
+
+.image-column {
+    flex: 0 0 30%;
+    text-align: center;
+}
+
+.image-column img {
+    width: 80%;
+    transition: opacity 0.3s ease;
+}
+
+.image-column img:hover {
+    opacity: 0.5;
+}
+
+.text-content {
+    flex: 0 0 70%;
+    padding: 20px;
 }
 
 /* Responsive Layout */
@@ -128,5 +159,18 @@ a:hover {
     .nav-menu ul {
         flex-direction: column;
         align-items: center;
+    }
+
+    .service-layer {
+        flex-direction: column;
+    }
+
+    .image-column, .text-content {
+        flex: 100%;
+        text-align: center;
+    }
+
+    .image-column img {
+        width: 100%;
     }
 }
