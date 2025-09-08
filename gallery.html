@@ -1,170 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Activities Photo Album</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
-            margin: 20px;
-        }
-        .grid-item img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .popup img {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 8px;
-        }
-        .popup:target {
-            display: flex;
-        }
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Professional Activities</title>
+  <meta name="description" content="Photo gallery of professional activities by Anh Nguyen‑Duc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#121836; --muted:#9197b3; --text:#ecf0ff; --accent:#6dd3ff; --accent-2:#9b8cff; --line:#1f264a; --card:#0f1630; --chip:#1b2246;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0a0f22, #0b1020 40%, #0a0f22 100%); color:var(--text)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Header / Nav (keeps original link targets) */
+    header.site{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;gap:18px;flex-wrap:wrap; align-items:center; justify-content:space-between; padding:14px 24px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+    .nav ul a{padding:8px 12px;border-radius:10px;display:block}
+    .nav ul a:hover{background:var(--chip)}
+
+    /* Page header */
+    .page-hero{padding:28px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:24px auto}
+    .page-hero h1{margin:0 0 8px 0;font-size:clamp(26px,4vw,40px)}
+    .muted{color:var(--muted)}
+
+    /* Controls */
+    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:13px;cursor:pointer}
+    .chip[aria-pressed="true"]{outline:2px solid var(--accent)}
+    .search{flex:1;min-width:220px}
+    .search input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+
+    /* Gallery grid */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    @media (max-width: 1080px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width: 720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 480px){.gallery{grid-template-columns:1fr}}
+
+    .tile{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer}
+    .tile img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .25s ease}
+    .tile:hover img{transform:scale(1.04)}
+    .tile figcaption{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.45);padding:4px 8px;border-radius:8px;font-size:12px}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:100}
+    .lightbox.open{display:flex}
+    .lightbox-inner{max-width:92vw;max-height:86vh;position:relative}
+    .lightbox-img{max-width:100%;max-height:86vh;border-radius:12px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .lightbox-caption{margin-top:10px;text-align:center;color:#dbe2ff;font-size:14px}
+    .lb-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(18,24,54,.8);border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer}
+    .lb-prev{left:-56px}
+    .lb-next{right:-56px}
+    .lb-close{position:absolute;top:-44px;right:-4px;border:none;background:rgba(18,24,54,.9);border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:10px;cursor:pointer}
+    @media (max-width:720px){.lb-prev{left:-4px}.lb-next{right:-4px}.lb-close{top:-48px;right:0}}
+
+    footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);text-align:center}
+    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  </style>
 </head>
 <body>
+  <a class="sr" href="#main">Skip to content</a>
+  <header class="site">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor"/></svg>
+        <span>Anh Nguyen‑Duc</span>
+      </a>
+      <!-- Keep original navigation links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="container">
-        <div class="right-column">
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="activities.html">Activities</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </nav>
-
-            <header>
-                <h1>Professional Activities Photo Album</h1>
-            </header>
-
-            <section id="services">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="#img1"><img src="photo1.jpg" alt="Activity 1"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img2"><img src="photo2.jpg" alt="Activity 2"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img3"><img src="photo3.jpg" alt="Activity 3"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img4"><img src="photo4.jpg" alt="Activity 4"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img5"><img src="photo5.jpg" alt="Activity 5"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img6"><img src="photo6.jpg" alt="Activity 6"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img7"><img src="photo7.jpg" alt="Activity 7"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img8"><img src="photo8.jpg" alt="Activity 8"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img9"><img src="photo9.jpg" alt="Activity 9"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img10"><img src="photo10.jpg" alt="Activity 10"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img11"><img src="photo11.jpg" alt="Activity 11"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="#img12"><img src="photo12.jpg" alt="Activity 12"></a>
-                    </div>
-                </div>
-
-                <!-- Popup for images -->
-                <div id="img1" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo1.jpg" alt="Activity 1">
-                </div>
-                <div id="img2" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo2.jpg" alt="Activity 2">
-                </div>
-                <div id="img3" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo3.jpg" alt="Activity 3">
-                </div>
-                <div id="img4" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo4.jpg" alt="Activity 4">
-                </div>
-                <div id="img5" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo5.jpg" alt="Activity 5">
-                </div>
-                <div id="img6" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo6.jpg" alt="Activity 6">
-                </div>
-                <div id="img7" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo7.jpg" alt="Activity 7">
-                </div>
-                <div id="img8" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo8.jpg" alt="Activity 8">
-                </div>
-                <div id="img9" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo9.jpg" alt="Activity 9">
-                </div>
-                <div id="img10" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo10.jpg" alt="Activity 10">
-                </div>
-                <div id="img11" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo11.jpg" alt="Activity 11">
-                </div>
-                <div id="img12" class="popup">
-                    <a href="#" class="close">&times;</a>
-                    <img src="photo12.jpg" alt="Activity 12">
-                </div>
-            </section>
-        </div>
+  <main id="main" class="container">
+    <div class="page-hero">
+      <h1>Professional Activities Photo Album</h1>
+      <p class="muted">Click any photo to open the lightbox. Use arrows or keyboard (←/→/Esc) to navigate.</p>
+      <div class="controls">
+        <div class="search"><input id="search" type="search" placeholder="Search caption, tags, location…" aria-label="Search photos"></div>
+        <button class="chip" data-filter="tag:conference" aria-pressed="false">Conference</button>
+        <button class="chip" data-filter="tag:teaching" aria-pressed="false">Teaching</button>
+        <button class="chip" data-filter="tag:industry" aria-pressed="false">Industry</button>
+        <button class="chip" data-filter="tag:workshop" aria-pressed="false">Workshop</button>
+        <button class="chip" data-filter="reset" aria-pressed="false" title="Clear filters">Reset</button>
+      </div>
     </div>
 
+    <section aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="sr">Gallery grid</h2>
+      <div id="gallery" class="gallery">
+        <!-- Replace src with your own files; add tags via data-tags -->
+        <figure class="tile" data-tags="conference, talk" data-caption="Activity 1 — Keynote talk">
+          <img src="photo1.jpg" alt="Activity 1 keynote" loading="lazy">
+          <figcaption>Activity 1 — Keynote talk</figcaption>
+        </figure>
 
-    
+        <figure class="tile" data-tags="teaching, classroom" data-caption="Activity 2 — Teaching session">
+          <img src="photo2.jpg" alt="Activity 2 teaching" loading="lazy">
+          <figcaption>Activity 2 — Teaching session</figcaption>
+        </figure>
 
+        <figure class="tile" data-tags="industry, meeting" data-caption="Activity 3 — Industry collaboration">
+          <img src="photo3.jpg" alt="Activity 3 industry meeting" loading="lazy">
+          <figcaption>Activity 3 — Industry collaboration</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="workshop, group" data-caption="Activity 4 — Hands‑on workshop">
+          <img src="photo4.jpg" alt="Activity 4 workshop" loading="lazy">
+          <figcaption>Activity 4 — Hands‑on workshop</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="conference, panel" data-caption="Activity 5 — Panel discussion">
+          <img src="photo5.jpg" alt="Activity 5 panel" loading="lazy">
+          <figcaption>Activity 5 — Panel discussion</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="teaching, mentoring" data-caption="Activity 6 — Mentoring session">
+          <img src="photo6.jpg" alt="Activity 6 mentoring" loading="lazy">
+          <figcaption>Activity 6 — Mentoring session</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="industry, site-visit" data-caption="Activity 7 — Company site visit">
+          <img src="photo7.jpg" alt="Activity 7 site visit" loading="lazy">
+          <figcaption>Activity 7 — Company site visit</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="workshop, training" data-caption="Activity 8 — Training event">
+          <img src="photo8.jpg" alt="Activity 8 training" loading="lazy">
+          <figcaption>Activity 8 — Training event</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="conference, poster" data-caption="Activity 9 — Poster session">
+          <img src="photo9.jpg" alt="Activity 9 poster" loading="lazy">
+          <figcaption>Activity 9 — Poster session</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="teaching, lab" data-caption="Activity 10 — Lab supervision">
+          <img src="photo10.jpg" alt="Activity 10 lab" loading="lazy">
+          <figcaption>Activity 10 — Lab supervision</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="industry, demo" data-caption="Activity 11 — Product demo">
+          <img src="photo11.jpg" alt="Activity 11 demo" loading="lazy">
+          <figcaption>Activity 11 — Product demo</figcaption>
+        </figure>
+
+        <figure class="tile" data-tags="workshop, community" data-caption="Activity 12 — Community meetup">
+          <img src="photo12.jpg" alt="Activity 12 meetup" loading="lazy">
+          <figcaption>Activity 12 — Community meetup</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Accessible Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-inner">
+      <img id="lbImg" class="lightbox-img" alt="">
+      <p id="lbCap" class="lightbox-caption"></p>
+      <button id="lbPrev" class="lb-btn lb-prev" aria-label="Previous image">◀</button>
+      <button id="lbNext" class="lb-btn lb-next" aria-label="Next image">▶</button>
+      <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
+    </div>
+  </div>
+
+  <footer class="container">
+    <small>© <span id="year"></span> Anh Nguyen‑Duc · Gallery</small>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtering (chips + search)
+    const searchInput = document.getElementById('search');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    let activeFilters = [];
+
+    function applyFilters(){
+      const q = (searchInput?.value || '').toLowerCase();
+      const tiles = document.querySelectorAll('.tile');
+      tiles.forEach(tile=>{
+        const cap = (tile.dataset.caption || '').toLowerCase();
+        const tags = (tile.dataset.tags || '').toLowerCase();
+        const textOk = q ? (cap.includes(q) || tags.includes(q)) : true;
+
+        const tagFilters = activeFilters.filter(f=>f.startsWith('tag:')).map(f=>f.split(':')[1]);
+        const tagOk = tagFilters.length ? tagFilters.some(t => tags.includes(t)) : true;
+
+        tile.style.display = (textOk && tagOk) ? '' : 'none';
+      });
+    }
+
+    chips.forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        const f = chip.dataset.filter;
+        if (f === 'reset'){
+          activeFilters = [];
+          chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+        } else {
+          const on = chip.getAttribute('aria-pressed') === 'true';
+          chip.setAttribute('aria-pressed', on ? 'false' : 'true');
+          if (!on) activeFilters.push(f); else activeFilters = activeFilters.filter(x=>x!==f);
+        }
+        applyFilters();
+      });
+    });
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+    // Lightbox
+    const gallery = Array.from(document.querySelectorAll('.tile img'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const btnPrev = document.getElementById('lbPrev');
+    const btnNext = document.getElementById('lbNext');
+    const btnClose = document.getElementById('lbClose');
+    let idx = 0;
+
+    function openLB(i){
+      idx = i;
+      const fig = gallery[idx].closest('.tile');
+      lbImg.src = gallery[idx].src;
+      lbImg.alt = gallery[idx].alt || '';
+      lbCap.textContent = fig?.dataset.caption || gallery[idx].alt || '';
+      lb.classList.add('open');
+      // focus close for a11y
+      btnClose.focus();
+    }
+    function closeLB(){ lb.classList.remove('open'); }
+    function prev(){ openLB((idx - 1 + gallery.length) % gallery.length); }
+    function next(){ openLB((idx + 1) % gallery.length); }
+
+    gallery.forEach((img, i)=>{
+      img.addEventListener('click', ()=> openLB(i));
+      img.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ openLB(i); }});
+      img.tabIndex = 0; // keyboard focusable
+    });
+
+    btnClose.addEventListener('click', closeLB);
+    btnPrev.addEventListener('click', prev);
+    btnNext.addEventListener('click', next);
+
+    document.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') closeLB();
+      if(e.key === 'ArrowLeft') prev();
+      if(e.key === 'ArrowRight') next();
+    });
+
+    // Close when clicking backdrop outside image
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLB(); });
+  </script>
 </body>
 </html>
