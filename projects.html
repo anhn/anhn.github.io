@@ -1,61 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Anh Nguyen-Duc</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Anh Nguyen‑Duc</title>
+  <meta name="description" content="Selected research and innovation projects led or co-led by Anh Nguyen‑Duc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#121836; --muted:#9197b3; --text:#ecf0ff; --accent:#6dd3ff; --accent-2:#9b8cff; --line:#1f264a; --card:#0f1630; --chip:#1b2246;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0a0f22, #0b1020 40%, #0a0f22 100%); color:var(--text)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Header / Nav */
+    header.site{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;gap:18px;flex-wrap:wrap; align-items:center; justify-content:space-between; padding:14px 24px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+    .nav ul a{padding:8px 12px;border-radius:10px;display:block}
+    .nav ul a:hover{background:var(--chip)}
+
+    /* Page header */
+    .page-hero{padding:28px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:24px auto}
+    .page-hero h1{margin:0 0 8px 0;font-size:clamp(26px,4vw,40px)}
+    .muted{color:var(--muted)}
+
+    /* Controls */
+    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:13px;cursor:pointer}
+    .chip[aria-pressed="true"]{outline:2px solid var(--accent)}
+    .search{flex:1;min-width:220px}
+    .search input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+
+    /* Grid & cards */
+    .grid{display:grid;gap:14px}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width: 920px){.cols-2{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .card h3{margin:0 0 8px 0}
+    .badge{display:inline-block;margin-right:8px;margin-top:8px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--chip);font-size:12px}
+    .kvs{margin:8px 0 0 0;font-size:14px;line-height:1.6}
+    .kvs strong{font-weight:600}
+
+    footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);text-align:center}
+    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="right-column">
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="activities.html">Activities</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </nav>
+  <a class="sr" href="#main">Skip to content</a>
+  <header class="site">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor"/></svg>
+        <span>Anh Nguyen‑Duc</span>
+      </a>
+      <!-- Keep original navigation links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <header>
-                <h1>Projects</h1>
-            </header>
-
-            <section id="project">
-    <ol>
-        <li>
-            <h3>Sustainable Software Lifecycle Management - An AI-driven Approach (Apr 2024 - Aug 2024)</h3>
-            <p><strong>Funding:</strong> 50,000 NOK</p>
-            <p><strong>Role:</strong> Main Researcher. University grant for research and writing proposal </p>
-        </li>
-        <li>
-            <h3>Implementing and Tracking SDGs in Entrepreneurial Projects (NFC) (Apr 2021 - Apr 2025)</h3>
-            <p><strong>Funding:</strong> 5,140,000 NOK</p>
-                <li>Innovation Project Industrial Sector Ph.D. Project in collaboration with Entreprenerdy AS. I am the main supervisor of the Ph.D. candidate</li>
-            <p><strong>Role:</strong> Project Partner, </p>
-        </li>
-        <li>
-            <h3>Digital Transformation in Rural Areas (NFC) (Aug 2020 - Aug 2024 )</h3>
-            <p><strong>Funding:</strong> 5,349,000 NOK</p>
-            <p><strong>Role:</strong> Project Partner, Innovasjons prosjekt, Offentleg ph.d. in collaboration with Vinje municipality. I wrote the application and co-supervised the Ph.D. candidate</p>
-        </li>
-        <li>
-            <h3>Internet Trend and Machine Learning in Email Phishing Detection (NFC) (March 2021 - September 2021)</h3>
-            <p><strong>Funding:</strong> 400,000 NOK</p>
-            <p><strong>Role:</strong> WP Leader, FORREGION project at Telemark region. Responsible for WP2 - Trend analysis from social media/Google Trend and WP3 - Model building and experiments. Partnering with Cyber-security lab at Cambridge University</p>
-
-        </li>
-        <li>
-            <h3>Building COMpetencies for COMpetitive COMpanies (Intereg) (July 2019 - December 2022)</h3>
-            <p><strong>Funding:</strong> 4.2 million EUR</p>
-            <p><strong>Role:</strong> Project Partner - Developed and deployed a model for regional authorities to create a dynamic environment for rural businesses in utilizing basic and advanced digital technologies. Participated as a regional coordinator (Telemark region), and in WP3 - model development< </p>
-        </li>
-    </ol>
-            </section>
-        </div>
+  <main id="main" class="container">
+    <div class="page-hero">
+      <h1>Projects</h1>
+      <p class="muted">Selected, funded projects. Use search or quick filters to browse by status or year.</p>
+      <div class="controls">
+        <div class="search"><input id="search" type="search" placeholder="Search title, funder, role, year…" aria-label="Search projects"></div>
+        <button class="chip" data-filter="status:active" aria-pressed="false">Active</button>
+        <button class="chip" data-filter="status:completed" aria-pressed="false">Completed</button>
+        <button class="chip" data-filter="year:2025" aria-pressed="false">2025</button>
+        <button class="chip" data-filter="year:2024" aria-pressed="false">2024</button>
+        <button class="chip" data-filter="year:2021" aria-pressed="false">2021</button>
+        <button class="chip" data-filter="year:2019" aria-pressed="false">2019</button>
+        <button class="chip" data-filter="reset" aria-pressed="false" title="Clear filters">Reset</button>
+      </div>
     </div>
+
+    <section aria-labelledby="proj-list-title">
+      <h2 id="proj-list-title" class="sr">Project list</h2>
+      <div class="grid cols-2">
+        <!-- Sustainable Software Lifecycle Management -->
+        <article class="card"
+          data-status="completed"
+          data-year-start="2024"
+          data-year-end="2024">
+          <h3>Sustainable Software Lifecycle Management — An AI‑driven Approach</h3>
+          <span class="badge">Apr 2024 – Aug 2024</span>
+          <span class="badge">Completed</span>
+          <div class="kvs">
+            <p><strong>Funding:</strong> 50,000 NOK (university grant)</p>
+            <p><strong>Role:</strong> Main researcher — research & proposal preparation</p>
+          </div>
+        </article>
+
+        <!-- Implementing and Tracking SDGs in Entrepreneurial Projects -->
+        <article class="card"
+          data-status="active"
+          data-year-start="2021"
+          data-year-end="2025">
+          <h3>Implementing and Tracking SDGs in Entrepreneurial Projects (NFC)</h3>
+          <span class="badge">Apr 2021 – Apr 2025</span>
+          <span class="badge">Active</span>
+          <div class="kvs">
+            <p><strong>Funding:</strong> 5,140,000 NOK</p>
+            <p><strong>Role:</strong> Project partner; main supervisor for Industrial Sector PhD (with Entreprenerdy AS)</p>
+          </div>
+        </article>
+
+        <!-- Digital Transformation in Rural Areas -->
+        <article class="card"
+          data-status="completed"
+          data-year-start="2020"
+          data-year-end="2024">
+          <h3>Digital Transformation in Rural Areas (NFC)</h3>
+          <span class="badge">Aug 2020 – Aug 2024</span>
+          <span class="badge">Completed</span>
+          <div class="kvs">
+            <p><strong>Funding:</strong> 5,349,000 NOK</p>
+            <p><strong>Role:</strong> Project partner; public sector PhD with Vinje Municipality. Led the application and co‑supervised the PhD candidate</p>
+          </div>
+        </article>
+
+        <!-- Internet Trend & ML in Email Phishing Detection -->
+        <article class="card"
+          data-status="completed"
+          data-year-start="2021"
+          data-year-end="2021">
+          <h3>Internet Trend and Machine Learning in Email Phishing Detection (NFC)</h3>
+          <span class="badge">Mar 2021 – Sep 2021</span>
+          <span class="badge">Completed</span>
+          <div class="kvs">
+            <p><strong>Funding:</strong> 400,000 NOK</p>
+            <p><strong>Role:</strong> WP Lead (FORREGION, Telemark). Led WP2 (trend analysis via social/Google Trends) & WP3 (model building/experiments). Partnered with a cybersecurity lab at Cambridge University</p>
+          </div>
+        </article>
+
+        <!-- COM3 Interreg -->
+        <article class="card"
+          data-status="completed"
+          data-year-start="2019"
+          data-year-end="2022">
+          <h3>Building COMpetencies for COMpetitive COMpanies (Interreg)</h3>
+          <span class="badge">Jul 2019 – Dec 2022</span>
+          <span class="badge">Completed</span>
+          <div class="kvs">
+            <p><strong>Funding:</strong> €4.2M</p>
+            <p><strong>Role:</strong> Project partner & regional coordinator (Telemark). Co‑developed and deployed a model for regional authorities to enable rural SMEs to use basic and advanced digital technologies (WP3 – model development)</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="year"></span> Anh Nguyen‑Duc · Projects</small>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtering by chips + search
+    const searchInput = document.getElementById('search');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    let activeFilters = [];
+
+    function matchesFilters(card){
+      // status filter
+      const statusFilters = activeFilters.filter(f=>f.startsWith('status:')).map(f=>f.split(':')[1]);
+      const yearFilters = activeFilters.filter(f=>f.startsWith('year:')).map(f=>f.split(':')[1]);
+
+      const statusOk = statusFilters.length ? statusFilters.includes(card.dataset.status) : true;
+
+      let yearOk = true;
+      if (yearFilters.length){
+        const ys = parseInt(card.dataset.yearStart,10);
+        const ye = parseInt(card.dataset.yearEnd,10);
+        yearOk = yearFilters.some(y => {
+          const yr = parseInt(y,10);
+          return yr >= ys && yr <= ye;
+        });
+      }
+      return statusOk && yearOk;
+    }
+
+    function applyFilters(){
+      const q = (searchInput.value || '').toLowerCase();
+      const cards = document.querySelectorAll('article.card');
+      cards.forEach(card=>{
+        const text = card.textContent.toLowerCase();
+        const filtersOk = matchesFilters(card);
+        const queryOk = q ? text.includes(q) : true;
+        card.style.display = (filtersOk && queryOk) ? '' : 'none';
+      });
+    }
+
+    chips.forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        const f = chip.dataset.filter;
+        if (f === 'reset'){
+          activeFilters = [];
+          chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+        } else {
+          const on = chip.getAttribute('aria-pressed') === 'true';
+          chip.setAttribute('aria-pressed', on ? 'false' : 'true');
+          if (!on) activeFilters.push(f); else activeFilters = activeFilters.filter(x=>x!==f);
+        }
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+  </script>
 </body>
 </html>
