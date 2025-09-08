@@ -1,139 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities | Anh Nguyen-Duc</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        ul {
-          list-style-type: none; /* Remove the default bullet points */
-        }
-    
-        ul li::before {
-          content: "★"; /* Add star before each list item */
-          margin-right: 10px; /* Add some space between the star and the text */
-          color: gold; /* Optional: Change the star color */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Activities | Anh Nguyen‑Duc</title>
+  <meta name="description" content="Professional activities, community service, editorial roles, PC memberships, and invited talks by Anh Nguyen‑Duc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#121836; --muted:#9197b3; --text:#ecf0ff; --accent:#6dd3ff; --accent-2:#9b8cff; --line:#1f264a; --card:#0f1630; --chip:#1b2246;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0a0f22, #0b1020 40%, #0a0f22 100%); color:var(--text)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Header / Nav (keep original links) */
+    header.site{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;gap:18px;flex-wrap:wrap; align-items:center; justify-content:space-between; padding:14px 24px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+    .nav ul a{padding:8px 12px;border-radius:10px;display:block}
+    .nav ul a:hover{background:var(--chip)}
+
+    /* Page header */
+    .page-hero{padding:28px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:24px auto}
+    .page-hero h1{margin:0 0 8px 0;font-size:clamp(26px,4vw,40px)}
+    .muted{color:var(--muted)}
+
+    /* Controls */
+    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:13px;cursor:pointer}
+    .chip[aria-pressed="true"]{outline:2px solid var(--accent)}
+    .search{flex:1;min-width:240px}
+    .search input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+
+    /* Sections / cards */
+    section{padding:8px 0 24px}
+    section h2{font-size:clamp(18px,2.6vw,26px);margin:16px 0 10px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .grid{display:grid;gap:14px}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width: 920px){.cols-2{grid-template-columns:1fr}}
+    ul.star{margin:0;padding:0;list-style:none}
+    ul.star li{position:relative;padding-left:22px;margin:8px 0;line-height:1.55}
+    ul.star li::before{content:"★";position:absolute;left:0;top:0.2rem;color:#ffd166}
+
+    details.ac{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
+    details.ac+details.ac{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+    summary::marker{color:var(--accent)}
+
+    footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);text-align:center}
+    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
   </style>
 </head>
 <body>
-    <div class="container">
-        <div class="right-column">
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="activities.html">Activities</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </nav>
+  <a class="sr" href="#main">Skip to content</a>
+  <header class="site">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor"/></svg>
+        <span>Anh Nguyen‑Duc</span>
+      </a>
+      <!-- Keep original navigation links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <header>
-                <h1>Activities</h1>
-            </header>
-<section>
-    <h2>Organizating Member of</h2>
-    <ul>
-        <li>2025, International Conference on the Foundations of Software Engineering (<a href="https://conf.researchr.org/home/fse-2025">FSE25</a>), Student Volunteer Chair</li>
-        <li>2020-current, Chairman of the Software startup research community (<a href="https://sofwarestartup.org/">https://softwarestartup.org/</a>)</li>
-        <li>2019-current, Chairman of Vietnamese Software Engineering Network (<a href="https://vietse.org/">https://vietse.org/</a>)</li>
-        <li>2018-2022, Norwegian Conference for IT Use in Organisations (NOKOBIT) - Steering committee member</li>
-        <li>2023, 2021, International workshop on Requirement Engineering for Software Startup and Emerging Technologies (RESET) - Program Chair</li>
-        <li>2023, AI-assisted XP workshop - Program Chair</li>
-        <li>2022, 13th International Conference on Software Business (ICSOB2022) - Program Chair</li>
-        <li>2021, 12th International Conference on Software Business (ICSOB2021) - General Chair</li>
-        <li>2021, 22nd Internation Conference on Evaluation and Advance Software Engineering, Special Issue Chair</li>
-        <li>2020, International Workshop on Essence in Education and Training (WEEandT2020) - Program Chair</li>
-        <li>2019, 10th International Conference on Software Business (ICSOB2019), Jyvaskyla, Finland - Short paper chair</li>
-        <li>2018, The Essentials of Modern Software Engineering (Book). Coauthored with Ivar Jacobson - Exercise track chair</li>
-        <li>2017, Euromicro Conference on Software Engineering and Advanced Applications (EUROMICRO2017) - Track chair SEAA</li>
-        <li>2016, 17th International Conference on Product-Focused Software Process Improvement (PROFES2016), Trondheim, Norway - Proceeding chair</li>
-        <li>2017, Innovations in Software Engineering Conference (ISEC2017), Hyderabad, India - Co-chair</li>
-        <li>2016, 22nd ICE/IEEE International Technology Management Conference (ICE2016), Trondheim, Norway - Local Organization chair</li>
-        <li>2015-2017, International workshops on Software Startup Research - Co-chair</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Editor Board members, Guest editors:</h2>
-    <ul>
-        <li>2021, 2022 Information and Software Technology, Guest Editor</li>
-        <li>2021, e-Informatica Software Engineering Journal, Guest Editor</li>
-        <li>2019 Future Internets Journal, Guest Editor</li>
-        <li>International Journal of Systems and Software Security and Protection (IJSSSP), Editorial Board member</li>
-        <li>Frontier in Education, Editorial Board member</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Journal Reviews:</h2>
-    <ul>
-        <li>IEEE Transaction in Software Engineering (TSE)</li>
-        <li>Communications of ACM</li>
-        <li>Information Software and Technology (IST)</li>
-        <li>Journal System and Software (JSS)</li>
-        <li>Empirical Software Engineering (ESE)</li>
-        <li>Automated Software Engineering</li>
-        <li>Advances in Software Engineering</li>
-        <li>International Journal of Software Engineering and Knowledge Engineering (JSEKE)</li>
-        <li>Journal of Software: Evolution and Process (JMSE)</li>
-    </ul>
-    <h2>Conference PC Members:</h2>
-    <ul>
-      <li>International Conference on the Foundations of Software Engineering (<a href="https://conf.researchr.org/home/fse-2025">FSE25</a>): 2025 (CORE ranking A*)</li>    
-      <li>International Conference on Automated Software Engineering (ASE): 2020, 2021 (CORE ranking A*)</li>
-      <li>Evaluation and Assessment in Software Engineering (EASE): 2017, 2018, 2019, 2020 (CORE ranking A)</li>
-      <li>International Requirements Engineering Conference (RE): 2023, 2024 (CORE ranking A)</li>
-      <li>International Conference on Agile Software Development (XP): 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 (CORE ranking B)</li>
-      <li>International Conference on Product-Focused Software Process Improvement (PROFES): 2015, 2017, 2019, 2020, 2021 (CORE ranking B)</li>
-      <li>International Conference on Distributed Computing and Internet Technology (ICDCIT): 2021 (CORE ranking B)</li>
-      <li>International Conference on Global Software Engineering (ICGSE): 2018, 2019, 2020 (CORE ranking B)</li>
-      <li>International Conference on Software and Systems Process (ICSSP): 2016, 2019 (CORE ranking B)</li>
-      <li>Pacific Asia Conference on Information Systems (PACIS): 2018 (CORE ranking B)</li>
-      <li>International Conference on Research Challenges in Information Science (RCIS): 2017 (CORE ranking B)</li>
-      <li>International Conference on Software Business (ICSOB): 2017, 2018, 2020, 2021, 2022, 2024 (CORE ranking C)</li>
-      <li>International Conference on Smart Cities and Internet of Things (SCOICT): 2023, 2024</li>
-      <li>International Workshop on Software Engineering for Systems-of-Systems (SESoS): 2022</li>
-      <li>International Workshop on Learning from Authoritative Security Data (LASD): 2021, 2022</li>
-      <li>Norsk Informatikkonferanse (NIK): 2018, 2019, 2020, 2021, 2022, 2024</li>
-      <li>Norsk Konferanse for Organisasjoners Bruk av IT (NOKOBIT): 2020, 2021, 2022</li>
-      <li>International Workshop on Security and Privacy in Software Engineering (SecSE): 2017, 2018, 2019</li>
-      <li>International Workshop on Business Models and Applications (WBMA): 2018, 2019</li>
-      <li>International Workshop on Quality-Aware DevOps (QuASD): 2017, 2018, 2019</li>
-      <li>International Conference on Research and Education in Information Technology (REV-ECIT): 2017</li>
-      <li>International Conference on Innovation and Entrepreneurship (ICE): 2016, 2019, 2022</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Selected Invited talks:</h2>
-    <ul>
-        <li>Guest lecture on "The role of AI in Agile Software Development", October 2024, BTH, Karlskrona, Sweden</li>
-        <li>Invited speaker on "Exploring Solution Spaces: A Large Language Model for Startup Assistance", October 2024, GISMA Business School, Hanover, Germnay</li>
-        <li>Invited speaker at 3rd International <a href="https://eugain.training/">EUGAIN</a> Summer Training School: Gender & Sustainability, September 2024, Airolo, Switzerland</li>
-        <li>Invited speaker at SEMLA (<a href="https://semla.polymtl.ca/">https://semla.polymtl.ca/</a>), June 2024, Montreal, Canada</li>
-        <li>Invited speaker at National Economics University (NEU), February 2024, Hanoi, Vietnam</li>
-        <li>Invited speaker at University of Transport Technology, January 2024, Hanoi, Vietnam</li>
-        <li>Guest lecture for StartOpp Nome og Midt-Telemark - "Digitalization and sustainability v/ Anh Nguyen Duc" 2022, USN</li>
-        <li>Guest speaker at AIM North Symposium 2022, Oslo. Title "Practices and challenges in working towards AI Ethical requirements"</li>
-        <li>Keynote speaker at Internal Conference on CyberSecurity, Research Institutes of Sweden, April 2021</li>
-        <li>Guest lecture - "Coopetition of software firms in Open source software ecosystems", Ph.D course - Advanced Software Engineering, NTNU, March 2021</li>
-        <li>Guest lecture - "Moving from principles to practices – The current state of AI Ethics", Ph.D course - Software Engineering for Artificial Intelligence, University of St.Gallen, March 2021</li>
-        <li>Coaching - "Prototyping and MVP – Foundation, Framework and Case study", Utrecht University, March 2021</li>
-        <li>Guest speech - "Learning and training software security for developer" at Code Warrior Tournament at Mbition, Daimler, August, 2020</li>
-        <li>Guest lecture - "Artificial Intelligence System Development - From Models to Software Engineering" at Polytechnic University of Catalonia, March, 2020</li>
-        <li>Guest talk - "Research & Education Projects at University of South Eastern Norway" at IKT Telemark network meeting, Skien, June, 2019</li>
-        <li>Guest talk - "Computing for Internet-of-Things Platforms: The state of the art" at NILU, Lillestrom, February, 2019</li>
-        <li>Guest talk "Can agility and quality coexist? Empirical studies of embedded software development" at SINTEF, Oslo, May, 2019</li>
-        <li>Special section chair - "Escaping the Software Engineering Method Prison: Is it still a myth or can it become a reality", ISERN meeting, Oulu, Finland, 2018</li>
-        <li>Keynote speaker at International Conference on Computing & Information Sciences (IC2IS-2016), Lahore, Pakistan</li>
-    </ul>
-</section>
-
-        </div>
+  <main id="main" class="container">
+    <div class="page-hero">
+      <h1>Activities</h1>
+      <p class="muted">Community service, editorial roles, program committees, and invited talks. Use search or quick filters to narrow down.</p>
+      <div class="controls">
+        <div class="search"><input id="search" type="search" placeholder="Search venue, year, role…" aria-label="Search activities"></div>
+        <button class="chip" data-filter="type:organizing" aria-pressed="false">Organizing</button>
+        <button class="chip" data-filter="type:editorial" aria-pressed="false">Editorial</button>
+        <button class="chip" data-filter="type:pc" aria-pressed="false">Program Committees</button>
+        <button class="chip" data-filter="type:talk" aria-pressed="false">Invited Talks</button>
+        <button class="chip" data-filter="reset" aria-pressed="false" title="Clear filters">Reset</button>
+      </div>
     </div>
+
+    <section aria-labelledby="org-title">
+      <h2 id="org-title">Organizing Member of</h2>
+      <div class="card">
+        <ul class="star">
+          <li data-type="organizing">2025 — International Conference on the Foundations of Software Engineering (<a href="https://conf.researchr.org/home/fse-2025">FSE25</a>), Student Volunteer Chair</li>
+          <li data-type="organizing">2020–current — Chairman, Software Startup Research Community (<a href="https://sofwarestartup.org/">softwarestartup.org</a>)</li>
+          <li data-type="organizing">2019–current — Chairman, Vietnamese Software Engineering Network (<a href="https://vietse.org/">vietse.org</a>)</li>
+          <li data-type="organizing">2018–2022 — NOKOBIT (Norwegian Conference for IT Use in Organisations), Steering Committee Member</li>
+          <li data-type="organizing">2023, 2021 — International Workshop on Requirement Engineering for Software Startup and Emerging Technologies (RESET), Program Chair</li>
+          <li data-type="organizing">2023 — AI‑assisted XP workshop, Program Chair</li>
+          <li data-type="organizing">2022 — 13th International Conference on Software Business (ICSOB 2022), Program Chair</li>
+          <li data-type="organizing">2021 — 12th International Conference on Software Business (ICSOB 2021), General Chair</li>
+          <li data-type="organizing">2021 — 22nd International Conference on Evaluation and Advanced Software Engineering, Special Issue Chair</li>
+          <li data-type="organizing">2020 — International Workshop on Essence in Education and Training (WEE&T 2020), Program Chair</li>
+          <li data-type="organizing">2019 — 10th International Conference on Software Business (ICSOB 2019), Short Paper Chair (Jyväskylä, Finland)</li>
+          <li data-type="organizing">2018 — The Essentials of Modern Software Engineering (book, with Ivar Jacobson), Exercise Track Chair</li>
+          <li data-type="organizing">2017 — Euromicro SEAA, Track Chair</li>
+          <li data-type="organizing">2016 — PROFES 2016 (Trondheim, Norway), Proceedings Chair</li>
+          <li data-type="organizing">2017 — ISEC 2017 (Hyderabad, India), Co‑chair</li>
+          <li data-type="organizing">2016 — ICE 2016 (Trondheim, Norway), Local Organization Chair</li>
+          <li data-type="organizing">2015–2017 — International Workshops on Software Startup Research, Co‑chair</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="ed-title">
+      <h2 id="ed-title">Editorial & Guest Editing</h2>
+      <div class="card">
+        <ul class="star">
+          <li data-type="editorial">2021, 2022 — <em>Information and Software Technology</em>, Guest Editor</li>
+          <li data-type="editorial">2021 — <em>e‑Informatica Software Engineering Journal</em>, Guest Editor</li>
+          <li data-type="editorial">2019 — <em>Future Internet</em>, Guest Editor</li>
+          <li data-type="editorial"><em>International Journal of Systems and Software Security and Protection (IJSSSP)</em>, Editorial Board Member</li>
+          <li data-type="editorial"><em>Frontiers in Education</em>, Editorial Board Member</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="pc-title">
+      <h2 id="pc-title">Program Committee Memberships</h2>
+      <details class="ac" open>
+        <summary>Show / Hide list</summary>
+        <div class="card" style="margin-top:10px">
+          <ul class="star">
+            <li data-type="pc">FSE 2025 — International Conference on the Foundations of Software Engineering (<a href="https://conf.researchr.org/home/fse-2025">FSE25</a>) (CORE A*)</li>
+            <li data-type="pc">ASE — 2020, 2021 (CORE A*)</li>
+            <li data-type="pc">EASE — 2017–2020 (CORE A)</li>
+            <li data-type="pc">RE — 2023, 2024 (CORE A)</li>
+            <li data-type="pc">XP — 2016, 2018–2025 (CORE B)</li>
+            <li data-type="pc">PROFES — 2015, 2017, 2019–2021 (CORE B)</li>
+            <li data-type="pc">ICDCIT — 2021 (CORE B)</li>
+            <li data-type="pc">ICGSE — 2018–2020 (CORE B)</li>
+            <li data-type="pc">ICSSP — 2016, 2019 (CORE B)</li>
+            <li data-type="pc">PACIS — 2018 (CORE B)</li>
+            <li data-type="pc">RCIS — 2017 (CORE B)</li>
+            <li data-type="pc">ICSOB — 2017, 2018, 2020, 2021, 2022, 2024 (CORE C)</li>
+            <li data-type="pc">SCOICT — 2023, 2024</li>
+            <li data-type="pc">SESoS — 2022</li>
+            <li data-type="pc">LASD — 2021, 2022</li>
+            <li data-type="pc">NIK — 2018–2022, 2024</li>
+            <li data-type="pc">NOKOBIT — 2020–2022</li>
+            <li data-type="pc">SecSE — 2017–2019</li>
+            <li data-type="pc">WBMA — 2018, 2019</li>
+            <li data-type="pc">QuASD — 2017–2019</li>
+            <li data-type="pc">REV‑ECIT — 2017</li>
+            <li data-type="pc">ICE — 2016, 2019, 2022</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section aria-labelledby="talks-title">
+      <h2 id="talks-title">Selected Invited Talks</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <ul class="star">
+            <li data-type="talk">Oct 2024 — Guest lecture, “The role of AI in Agile Software Development”, BTH, Karlskrona, Sweden</li>
+            <li data-type="talk">Oct 2024 — Invited talk, “Exploring Solution Spaces: A Large Language Model for Startup Assistance”, GISMA Business School, Hanover, Germany</li>
+            <li data-type="talk">Sep 2024 — Invited speaker, 3rd <a href="https://eugain.training/">EUGAIN</a> Summer Training School: Gender & Sustainability, Airolo, Switzerland</li>
+            <li data-type="talk">Jun 2024 — Invited speaker at SEMLA (<a href="https://semla.polymtl.ca/">semla.polymtl.ca</a>), Montréal, Canada</li>
+            <li data-type="talk">Feb 2024 — Invited speaker, National Economics University, Hanoi, Vietnam</li>
+            <li data-type="talk">Jan 2024 — Invited speaker, University of Transport Technology, Hanoi, Vietnam</li>
+            <li data-type="talk">2022 — Guest lecture for StartOpp Nome & Midt‑Telemark, “Digitalization and sustainability”, USN</li>
+            <li data-type="talk">2022 — AIM North Symposium, Oslo, “Practices and challenges in working towards AI Ethical requirements”</li>
+        </article>
+        <article class="card">
+          <ul class="star">
+            <li data-type="talk">Apr 2021 — Keynote, Internal Conference on CyberSecurity, RISE (Sweden)</li>
+            <li data-type="talk">Mar 2021 — Guest lecture, “Coopetition in Open Source Software Ecosystems”, PhD course, NTNU</li>
+            <li data-type="talk">Mar 2021 — Guest lecture, “From principles to practice – AI Ethics”, PhD course, University of St. Gallen</li>
+            <li data-type="talk">Mar 2021 — Coaching, “Prototyping and MVP – Foundation, Framework and Case study”, Utrecht University</li>
+            <li data-type="talk">Aug 2020 — Guest speech, “Learning and training software security for developers”, Code Warrior Tournament, Mbition/Daimler</li>
+            <li data-type="talk">Mar 2020 — Guest lecture, “AI System Development – From Models to Software Engineering”, UPC (Polytechnic University of Catalonia)</li>
+            <li data-type="talk">Jun 2019 — “Research & Education Projects at USN”, IKT Telemark network meeting, Skien</li>
+            <li data-type="talk">Feb 2019 — “Computing for IoT Platforms: State of the art”, NILU, Lillestrøm</li>
+            <li data-type="talk">May 2019 — “Can agility and quality coexist? Empirical studies of embedded software development”, SINTEF, Oslo</li>
+            <li data-type="talk">2018 — Special section chair, ISERN meeting, Oulu, Finland</li>
+            <li data-type="talk">2016 — Keynote, IC2IS‑2016, Lahore, Pakistan</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="year"></span> Anh Nguyen‑Duc · Activities</small>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtering (chips + search)
+    const searchInput = document.getElementById('search');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const filterables = Array.from(document.querySelectorAll('[data-type]'));
+    let active = [];
+
+    function applyFilters(){
+      const q = (searchInput?.value || '').toLowerCase();
+      const typeFilters = active.filter(f=>f.startsWith('type:')).map(f=>f.split(':')[1]);
+
+      filterables.forEach(node=>{
+        const text = node.textContent.toLowerCase();
+        const type = node.dataset.type;
+        const typeOk = typeFilters.length ? typeFilters.includes(type) : true;
+        const qOk = q ? text.includes(q) : true;
+        node.style.display = (typeOk && qOk) ? '' : 'none';
+      });
+    }
+
+    chips.forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        const f = chip.dataset.filter;
+        if (f === 'reset'){
+          active = [];
+          chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+        } else {
+          const on = chip.getAttribute('aria-pressed') === 'true';
+          chip.setAttribute('aria-pressed', on ? 'false' : 'true');
+          if (!on) active.push(f); else active = active.filter(x=>x!==f);
+        }
+        applyFilters();
+      });
+    });
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+  </script>
 </body>
 </html>
