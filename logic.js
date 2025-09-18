@@ -1,5 +1,5 @@
 // logic.js
-import { Recorder } from './recorder.js';
+import { AudioRecorder } from './recorder.js';
 import { WhisperAPI } from './api.js';
 import { RecorderUI } from './recorder-ui.js';
 
@@ -23,7 +23,7 @@ const AppLogic = (function () {
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      recorder = new Recorder(stream);
+      recorder = new AudioRecorder(stream);
       await recorder.start();
 
       RecorderUI.visualize(stream, canvas, stopRecording); // auto stop via RMS
@@ -66,3 +66,4 @@ const AppLogic = (function () {
     init
   };
 })();
+
