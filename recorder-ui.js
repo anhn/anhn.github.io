@@ -63,7 +63,7 @@ const RecorderUI = (function () {
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      recorder = new Recorder(stream);
+      recorder = new AudioRecorder(stream);
       await recorder.start();
 
       setupAudioVisualizer(stream);
@@ -120,4 +120,5 @@ const RecorderUI = (function () {
     init
   };
 })();
+
 
