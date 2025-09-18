@@ -2,7 +2,7 @@
 import { AudioRecorder } from './recorder.js';
 import { WhisperAPI } from './api.js';
 
-const RecorderUI = (function () {
+const RecorderUI = (() => {
   let recorder = null;
   let animationId = null;
   let recording = false;
@@ -121,4 +121,5 @@ const RecorderUI = (function () {
   };
 })();
 
-
+// ✅ Export as named module
+export { RecorderUI };
