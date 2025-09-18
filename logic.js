@@ -67,3 +67,5 @@ const AppLogic = (function () {
   };
 })();
 
+// ✅ Export as named module
+export { AppLogic };
