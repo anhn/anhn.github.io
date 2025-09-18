@@ -1,5 +1,5 @@
 // recorder-ui.js
-import { Recorder } from './recorder.js';
+import { AudioRecorder } from './recorder.js';
 import { WhisperAPI } from './api.js';
 
 const RecorderUI = (function () {
@@ -120,3 +120,4 @@ const RecorderUI = (function () {
     init
   };
 })();
+
