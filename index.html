@@ -1,326 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2WG7PPJZZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-G2WG7PPJZZ');
-  </script>  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prof. Anh Nguyen‑Duc | Software Engineering</title>
-  <meta name="description" content="Software Engineering professor focusing on software startups, empirical SE, and responsible AI. Research, publications, teaching, and projects.">
-  <meta property="og:title" content="Prof. Anh Nguyen‑Duc" />
-  <meta property="og:description" content="Software Engineering professor | Startups | Responsible AI | Empirical SE" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1020; --panel:#121836; --muted:#9197b3; --text:#ecf0ff; --accent:#6dd3ff; --accent-2:#9b8cff; --line:#1f264a;
-      --card:#0f1630; --chip:#1b2246; --good:#36d399; --warn:#ffd166;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0a0f22, #0b1020 40%, #0a0f22 100%); color:var(--text);}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1150px;margin:0 auto;padding:24px}
-    header.site{
-      position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
-    }
-    .nav{display:flex;gap:18px;flex-wrap:wrap; align-items:center; justify-content:space-between; padding:14px 24px}
-    .nav a.brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
-    .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
-    .nav ul a{padding:8px 12px;border-radius:10px;display:block}
-    .nav ul a:hover{background:var(--chip)}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:40px 24px}
-    .hero h1{font-size:clamp(28px,4vw,46px);margin:0 0 8px 0}
-    .hero p.lead{color:var(--muted);font-size:clamp(14px,2.1vw,18px);margin:0 0 18px 0;line-height:1.6}
-    .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-    .btn{border:1px solid var(--line);background:var(--panel);padding:10px 14px;border-radius:12px;color:var(--text);font-weight:600}
-    .btn:hover{background:var(--chip)}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;color:#0b1020}
-    .btn.primary:hover{filter:brightness(1.05)}
-
-    .portrait{display:flex;justify-content:center}
-    .portrait .card{background:radial-gradient(80% 80% at 50% 20%, #1a2250, #0f1533);border:1px solid var(--line);padding:18px;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-    .portrait img{width:100%;max-width:360px;aspect-ratio:1/1;object-fit:cover;border-radius:16px;display:block}
-
-    /* Section */
-    section{padding:24px}
-    section h2{font-size:clamp(20px,2.6vw,28px); margin:0 0 12px 0}
-    .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}
-
-    /* Grids */
-    .grid{display:grid;gap:14px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width: 920px){
-      .hero{grid-template-columns:1fr;}
-      .grid.cols-3{grid-template-columns:1fr}
-      .grid.cols-2{grid-template-columns:1fr}
-    }
-
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-    .card h3{margin:0 0 6px 0;font-size:18px}
-    .muted{color:var(--muted)}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:13px}
-
-    /* Stats */
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
-    .stat .n{font-size:28px;font-weight:800}
-    .stat .k{font-size:13px;color:var(--muted)}
-    @media (max-width: 720px){.stats{grid-template-columns:repeat(2,1fr)}}
-
-    /* Lists */
-    .list{display:grid;gap:10px}
-    .list li{list-style:none}
-
-    /* Footer */
-    footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);text-align:center}
-
-    /* Accessibility helpers */
-    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anh Nguyen-Duc · Software Engineering Research &amp; Advisory</title>
+<meta name="description" content="Professor of Software Engineering in Norway. Research on software startups and generative AI, and independent advisory on AI adoption, software practice and R&amp;D.">
+<meta property="og:title" content="Anh Nguyen-Duc · Software Engineering Research &amp; Advisory">
+<meta property="og:description" content="Professor of Software Engineering in Norway. Research on software startups and generative AI, and independent advisory on AI adoption, software practice and R&amp;D.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anhn.github.io/index.html">
+<meta property="og:image" content="https://anhn.github.io/img/profile.jpg">
+<link rel="canonical" href="https://anhn.github.io/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <a class="sr" href="#main">Skip to content</a>
-  <header class="site">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Home">
-        <!-- Simple inline SVG avatar -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor"/></svg>
-        <span>Prof. Anh Nguyen‑Duc</span>
-      </a>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="activities.html">Research</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="gallery.html">Media</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="lang" aria-label="Språkvalg">
-        <!-- Bruker FlagCDN-ikoner (online) -->
-        <a href="index.html" lang="en" hreflang="en" aria-label="English">
-          <img class="flag" src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" alt="English flagg">
-          EN
-        </a>
-        <a href="index_no.html" lang="no" hreflang="no" aria-label="Norsk">
-          <img class="flag" src="https://flagcdn.com/w20/no.png" srcset="https://flagcdn.com/w40/no.png 2x" alt="Norsk flagg">
-          NO
-        </a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Anh Nguyen-Duc</a>
+    <nav aria-label="Main"><ul><li class="r"><a href="publications.html"><span class="dot"></span>Research</a></li><li class="p"><a href="projects.html"><span class="dot"></span>Practice</a></li><li class="a"><a href="services.html"><span class="dot"></span>Advisory</a></li><li class="n"><a href="activities.html">Talks &amp; service</a></li><li class="n"><a href="gallery.html">Media</a></li><li class="n"><a href="index.html#contact">Contact</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-text">
+      <span class="label">Professor of Software Engineering · USN &amp; NTNU · Norway</span>
+      <h1>Evidence for decisions about <em>AI and software work</em>.</h1>
+      <p class="lede">I study how software is really built, in startups, public agencies and established companies, and how generative AI is changing that work. I use the same methods to help organisations evaluate tools, practices and R&amp;D investments before they commit.</p>
+      <div class="cta">
+        <a class="btn primary" href="services.html">See advisory services</a>
+        <a class="btn" href="#contact">Book a scoping call</a>
       </div>
-    </nav>
-  </header>
+    </div>
+    <figure class="portrait">
+      <img src="img/profile.jpg" width="720" height="900" alt="Portrait of Anh Nguyen-Duc">
+      <figcaption>Anh Nguyen-Duc</figcaption>
+    </figure>
+  </section>
+  <div class="ledger" aria-label="Track record">
+    <div><b>100+</b><span>peer-reviewed publications</span></div>
+    <div><b>4,000+</b><span>citations</span></div>
+    <div><b>30+</b><span>MSc &amp; PhD theses supervised</span></div>
+    <div><b>7</b><span>funded R&amp;D projects since 2019</span></div>
+  </div>
+  <div class="triad">
+    <a class="tri r" href="publications.html">
+      <span class="label">Research</span>
+      <h3>Publications, supervision, academic collaboration</h3>
+      <p>Empirical studies of software startups, developer work and generative AI in engineering.</p>
+      <span class="for">For universities, PhD candidates, research partners</span>
+    </a>
+    <a class="tri p" href="projects.html">
+      <span class="label">Practice</span>
+      <h3>Software systems, experiments, open source</h3>
+      <p>Working systems built to test ideas: LLM advisors, adaptive learning feedback, ML detection.</p>
+      <span class="for">For engineers, product teams, pilot partners</span>
+    </a>
+    <a class="tri a" href="services.html">
+      <span class="label">Advisory</span>
+      <h3>Independent evaluations, technical assessments, R&amp;D collaboration</h3>
+      <p>Structured, measurable answers to questions about tools, teams and innovation projects.</p>
+      <span class="for">For engineering leaders, funders, public sector</span>
+    </a>
+  </div>
+</div>
 
-  <main id="main" class="container">
-    <!-- HERO -->
-    <section id="about" class="hero panel">
-      <div>
-        <h1>Software Engineering Professor</h1>
-        <p class="lead">I study how software gets built in the wild—especially in startups—and how generative AI reshapes engineering work. I combine empirical software engineering with design‑oriented research to create practical, responsible solutions.</p>
-        <div class="chips" aria-label="keywords">
-          <span class="chip">GenerativeAI and SE</span>
-          <span class="chip">Empirical SE</span>
-          <span class="chip">Education research</span>
-          <span class="chip">Socio‑technical Systems</span>
-        </div>
-        <div class="cta">
-          <a class="btn primary" href="#publications">View Publications</a>
-          <a class="btn" href="mailto:angu@usn.no">angu@usn.no</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=ia02J_oAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-        </div>
-        <p class="muted" style="margin-top:8px;">University of South‑Eastern Norway (USN) · Norwegian University of Science and Technology (NTNU)</p>
+<section class="part a">
+  <div class="wrap">
+    <div class="part-head">
+      <span class="label">Advisory</span>
+      <h2>Three ways to work together</h2>
+      <p class="prose">Every engagement uses research-grade methods at a pace that fits a business decision. Each finding says how it was measured and how confident we can be in it.</p>
+    </div>
+    <div class="offers">
+  <article class="offer">
+    <span class="chip">Independent evaluation</span>
+    <h3>Is it working?</h3>
+    <p class="q">“We rolled out AI coding assistants. Are we faster, and is quality holding?”</p>
+    <dl>
+      <dt>Scope</dt><dd>AI tool rollouts, process changes, training or innovation programmes</dd>
+      <dt>Method</dt><dd>Baseline and follow-up metrics, developer surveys, interviews, repository data</dd>
+      <dt>You get</dt><dd>Evaluation report with measured effects, risks and a recommendation</dd>
+      <dt>Typical</dt><dd>4–8 weeks</dd>
+    </dl>
+  </article>
+  <article class="offer">
+    <span class="chip">Technical assessment</span>
+    <h3>Are we ready?</h3>
+    <p class="q">“How should we bring LLMs into our product, and what does the EU AI Act ask of us?”</p>
+    <dl>
+      <dt>Scope</dt><dd>GenAI and RAG readiness, engineering practices, responsible AI governance</dd>
+      <dt>Method</dt><dd>Workshops, architecture and practice review against published evidence</dd>
+      <dt>You get</dt><dd>Assessment, prioritised roadmap and a half-day team workshop</dd>
+      <dt>Typical</dt><dd>2–4 weeks</dd>
+    </dl>
+  </article>
+  <article class="offer">
+    <span class="chip">R&amp;D collaboration</span>
+    <h3>Can we build this together?</h3>
+    <p class="q">“We have an innovation idea and need a research partner and funding.”</p>
+    <dl>
+      <dt>Scope</dt><dd>Research Council of Norway, Innovation Norway, Interreg and Horizon Europe projects</dd>
+      <dt>Method</dt><dd>Joint proposal writing, work-package lead, industrial or public-sector PhD</dd>
+      <dt>You get</dt><dd>A funded project with a research team and documented results</dd>
+      <dt>Typical</dt><dd>2–4 years</dd>
+    </dl>
+  </article>
+</div>
+    <ol class="steps" aria-label="How an engagement runs">
+  <li><span class="n">Step 1</span><b>Scoping call</b><p>30 minutes to define the decision you need to make.</p></li>
+  <li><span class="n">Step 2</span><b>Proposal</b><p>Fixed scope, method, timeline and price in writing.</p></li>
+  <li><span class="n">Step 3</span><b>Fieldwork</b><p>Data collection with your teams, with minimal disruption.</p></li>
+  <li><span class="n">Step 4</span><b>Report &amp; debrief</b><p>Findings presented to decision-makers, with next steps.</p></li>
+</ol>
+    <a class="more" href="services.html">Topics, track record and details →</a>
+  </div>
+</section>
+
+<section class="part p">
+  <div class="wrap">
+    <div class="part-head">
+      <span class="label">Practice</span>
+      <h2>Systems I build and test</h2>
+      <p class="prose">Research ideas become working software, so they can be tried with real users and measured.</p>
+    </div>
+    <div class="rows">
+<article class="row" data-type="system"><div class="yr">2024 – now<span class="chip">Active</span></div><div><h3>Innspill</h3><p>AI platform that gives students adaptive, quick feedback for personalised learning.</p></div><div class="meta"><span>Role: main researcher, system developer</span><span>200k NOK · Innovation Norway, investors</span></div></article>
+<article class="row" data-type="system"><div class="yr">Ongoing<span class="chip">Active</span></div><div><h3>StartupGPT</h3><p>LLM-based virtual mentor that gives early-stage founders evidence-based guidance on validation, prioritisation and roadmaps.</p></div><div class="meta"><span>LLM · RAG · evaluation</span></div></article>
+<article class="row" data-type="system"><div class="yr">2025<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>LLM-based knowledge extraction in education</h3><p>Using large language models to extract structured knowledge from educational material.</p></div><div class="meta"><span>Role: main researcher, supervisor</span><span>50k NOK · Vietnamese funders</span></div></article>
+    </div>
+    <a class="more" href="projects.html">All projects →</a>
+  </div>
+</section>
+
+<section class="part r">
+  <div class="wrap">
+    <div class="part-head">
+      <span class="label">Research</span>
+      <h2>Empirical software engineering</h2>
+      <p class="prose">I lead the Management Information Systems research group at the University of South-Eastern Norway and chair the Software Startup Research Network.</p>
+    </div>
+    <div class="cols">
+      <div class="focus">
+        <div><h3>Software startups</h3><p>Engineering and innovation under extreme uncertainty: validation, product-market fit, early-stage methods.</p></div>
+        <div><h3>Generative AI in software engineering</h3><p>How LLMs change developer tasks, productivity and quality, and how to evaluate them.</p></div>
+        <div><h3>Responsible AI in practice</h3><p>Turning ethics and regulation into concrete engineering practice, including inclusive AI for elderly and neurodiverse users.</p></div>
       </div>
-      <div class="portrait">
-        <div class="card">
-          <img src="profile.jpg" alt="Portrait of Prof. Anh Nguyen‑Duc" loading="lazy" />
+      <div style="display:grid;gap:20px;align-content:start">
+        <div class="books">
+          <div class="book"><b>Generative AI for Effective Software Development</b><br><i>Springer Nature · co-editor</i></div>
+          <div class="book"><b>Fundamentals of Software Startups</b><br><i>Springer · 2020 · co-editor</i></div>
         </div>
+        <ul class="pubs">
+          <li>Work-from-home impacts on software projects: a global study<span class="v">Software: Practice and Experience · 2024</span></li>
+          <li>StartCards: a method for early-stage software startups<span class="v">Information and Software Technology · 2023</span></li>
+          <li>The entrepreneurial logic of startup software development: a study of 40 software startups<span class="v">Empirical Software Engineering · 2021</span></li>
+        </ul>
       </div>
-    </section>
-
-    <!-- STATS (optional placeholders; wire to live data if you wish) -->
-    <section aria-labelledby="stats-title">
-      <h2 id="stats-title">At a glance</h2>
-      <div class="stats" role="list">
-        <div class="stat" role="listitem" aria-label="Fundings">
-          <div class="n">1.000.000+</div>
-          <div class="k">USD</div>
-        </div>
-        <div class="stat" role="listitem" aria-label="Publications">
-          <div class="n" data-key="pubs">100+</div>
-          <div class="k">Publications</div>
-        </div>
-        <div class="stat" role="listitem" aria-label="Citations">
-          <div class="n" data-key="cites">4k+</div>
-          <div class="k">Citations</div>
-        </div>
-        <div class="stat" role="listitem" aria-label="Students supervised">
-          <div class="n">30+</div>
-          <div class="k">Master and Phd theses supervised</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH FOCUS -->
-    <section id="research" class="panel" aria-labelledby="research-title">
-      <h2 id="research-title">Research Focus</h2>
-      <div class="grid cols-3">
-        <article class="card">
-          <h3>Software Startups</h3>
-          <p class="muted">Innovation practices, product‑market fit, and engineering under extreme uncertainty. Co‑founder of the Software Startup Research Network.</p>
-          <div class="chips"><span class="chip">Lean/Agile</span><span class="chip">Ecosystems</span><span class="chip">Metrics</span></div>
-        </article>
-        <article class="card">
-          <h3>Empirical SE & Evidence</h3>
-          <p class="muted">Mixed‑methods studies on developer behavior, tooling, and process—turning data into actionable insights for teams and policy‑makers.</p>
-          <div class="chips"><span class="chip">Case & Field</span><span class="chip">Mining SE</span><span class="chip">Theory‑informed</span></div>
-        </article>
-        <article class="card">
-          <h3>Responsible / Generative AI</h3>
-          <p class="muted">From ethics‑in‑practice to LLM‑augmented workflows. Co‑author of <em>Generative AI for Effective Software Development</em> (Springer).</p>
-          <div class="chips"><span class="chip">RAG</span><span class="chip">Evaluation</span><span class="chip">Governance</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Selected Projects</h2>
-      <div class="grid cols-3">
-        <article class="card">
-          <h3>StartupGPT</h3>
-          <p class="muted">A virtual mentor for early‑stage founders. Evidence‑based guidance on validation, prioritization, and roadmap decisions.</p>
-          <div class="chips"><span class="chip">LLM</span><span class="chip">Advisory</span><span class="chip">Evaluation</span></div>
-        </article>
-        <article class="card">
-          <h3>Inclusive AI for Elderly & Neurodiverse</h3>
-          <p class="muted">Responsible AI methods, participatory design, and low‑code tooling to support inclusive digital services.</p>
-          <div class="chips"><span class="chip">Participatory</span><span class="chip">Accessibility</span></div>
-        </article>
-        <article class="card">
-          <h3>Software Startup Research Network</h3>
-          <p class="muted">International network advancing cumulative knowledge on software venture creation and growth.</p>
-          <div class="chips"><span class="chip">Community</span><span class="chip">Workshops</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- TEACHING -->
-    <section id="teaching" class="panel" aria-labelledby="teach-title">
-      <h2 id="teach-title">Teaching & Supervision</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Courses</h3>
-          <ul class="list">
-            <li>Advanced Software Engineering</li>
-            <li>Digital Innovation & Entrepreneurship</li>
-            <li>Responsible AI in Software Practice</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Supervision</h3>
-          <p class="muted">I supervise MSc and PhD projects in empirical SE, startup engineering, and AI‑augmented development.</p>
-          <div class="chips"><span class="chip">SE for Startups</span><span class="chip">GenAI in SE</span><span class="chip">Socio‑technical</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" aria-labelledby="pubs-title">
-      <h2 id="pubs-title">Recent & Featured Publications</h2>
-      <div class="grid cols-2">
-        <article class="card">
-          <h3>Books</h3>
-          <ul class="list">
-            <li><em>Generative AI for Effective Software Development</em>, Springer Nature.</li>
-            <li><em>Fundamentals of Software Startup Engineering</em>, Springer Nature.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Selected Papers</h3>
-          <ul class="list">
-            <li>LLM adoption and task‑level impacts in SE (empirical study).</li>
-            <li>Engineering practices in software startups: a multi‑case synthesis.</li>
-            <li>Ethics‑in‑action for AI tools in development workflows.</li>
-          </ul>
-          <p class="muted">See complete list <a href="publication.html"> here </a> or <a href="https://scholar.google.com/citations?user=ia02J_oAAAAJ" target="_blank" rel="noopener">Google Scholar</a>, <a href="https://orcid.org/0000-0002-7063-9200" target="_blank" rel="noopener">ORCID</a>, or <a href="https://dblp.org/pid/32/6133.html" target="_blank" rel="noopener">DBLP</a>.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- SERVICE -->
-    <section id="service" class="panel" aria-labelledby="service-title">
-      <h2 id="service-title">Service & Leadership</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>Academic Leadership</h3>
-          <p class="muted">Leads Management Information Systems research group at USN. Community building across Nordic‑Baltic region.</p>
-        </div>
-        <div class="card">
-          <h3>Program Committees</h3>
-          <p class="muted">ICSE/ASE/FSE tracks and domain venues (ICSOB, PROFES, etc.).</p>
-        </div>
-        <div class="card">
-          <h3>Industry Engagement</h3>
-          <p class="muted">Advises startups; collaborates on data‑driven product development and AI adoption.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Get in touch</h3>
-          <p>Email: <a href="mailto:angu@usn.no">angu@usn.no</a><br> Phone: +47 483 48 496</p>
-          <p class="muted">University of South‑Eastern Norway · NTNU (affiliate)</p>
-          <div class="chips">
-            <a class="chip" href="https://www.linkedin.com/in/anhnguyenduc/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="chip" href="https://github.com/anhn" target="_blank" rel="noopener">GitHub</a>
-            <a class="chip" href="https://softwarestartup.org/" target="_blank" rel="noopener">SSRN</a>
-            <a class="chip" href="https://scholar.google.com/citations?user=ia02J_oAAAAJ" target="_blank" rel="noopener">Scholar</a>
-          </div>
-        </div>
-        <form class="card" action="https://formspree.io/f/your-id" method="POST">
-          <h3>Quick message</h3>
-          <label>Name<br><input name="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text)"></label>
-          <br><br>
-          <label>Email<br><input type="email" name="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text)"></label>
-          <br><br>
-          <label>Message<br><textarea name="message" rows="5" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text)"></textarea></label>
-          <br><br>
-          <button class="btn primary" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <small>© <span id="year"></span> Anh Nguyen‑Duc · Built with semantic HTML & pure CSS</small>
-  </footer>
-
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </div>
+    <a class="more" href="publications.html">All publications and supervision →</a>
+  </div>
+</section>
+</main>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Start with a 30-minute scoping call</h2>
+    <p class="prose">Tell me the decision you are facing and which area it touches: research, practice or advisory.</p>
+    <div class="mail">
+      <code id="email">anhnd85@gmail.com</code>
+      <a class="btn primary" href="mailto:anhnd85@gmail.com">Write an email</a>
+      <button class="btn" type="button" data-copy="email">Copy address</button>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/anhnguyenduc/">LinkedIn ↗</a>
+      <a href="https://github.com/anhn">GitHub ↗</a>
+      <a href="https://scholar.google.com/citations?user=ia02J_oAAAAJ">Google Scholar ↗</a>
+      <a href="https://orcid.org/0000-0002-7063-9200">ORCID ↗</a>
+    </div>
+  </div>
+</section>
+<footer class="site"><div class="wrap">
+  <span>© 2026 Anh Nguyen-Duc</span>
+  <span>Professor of Software Engineering · University of South-Eastern Norway</span>
+</div></footer>
+<script src="js/site.js"></script>
 </body>
 </html>
-
-
-
-
-

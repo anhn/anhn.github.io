@@ -1,266 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2WG7PPJZZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-G2WG7PPJZZ');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Anh Nguyen‑Duc</title>
-  <meta name="description" content="Selected research and innovation projects led or co-led by Anh Nguyen‑Duc." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1020; --panel:#121836; --muted:#9197b3; --text:#ecf0ff; --accent:#6dd3ff; --accent-2:#9b8cff; --line:#1f264a; --card:#0f1630; --chip:#1b2246;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0a0f22, #0b1020 40%, #0a0f22 100%); color:var(--text)}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-
-    /* Header / Nav */
-    header.site{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;gap:18px;flex-wrap:wrap; align-items:center; justify-content:space-between; padding:14px 24px}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
-    .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
-    .nav ul a{padding:8px 12px;border-radius:10px;display:block}
-    .nav ul a:hover{background:var(--chip)}
-
-    /* Page header */
-    .page-hero{padding:28px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:24px auto}
-    .page-hero h1{margin:0 0 8px 0;font-size:clamp(26px,4vw,40px)}
-    .muted{color:var(--muted)}
-
-    /* Controls */
-    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
-    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:13px;cursor:pointer}
-    .chip[aria-pressed="true"]{outline:2px solid var(--accent)}
-    .search{flex:1;min-width:220px}
-    .search input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text)}
-
-    /* Grid & cards */
-    .grid{display:grid;gap:14px}
-    .cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width: 920px){.cols-2{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-    .card h3{margin:0 0 8px 0}
-    .badge{display:inline-block;margin-right:8px;margin-top:8px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--chip);font-size:12px}
-    .kvs{margin:8px 0 0 0;font-size:14px;line-height:1.6}
-    .kvs strong{font-weight:600}
-
-    footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);text-align:center}
-    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Practice · Anh Nguyen-Duc</title>
+<meta name="description" content="Software systems and funded projects: Innspill, StartupGPT, LLM knowledge extraction, phishing detection and digital transformation collaborations.">
+<meta property="og:title" content="Practice · Anh Nguyen-Duc">
+<meta property="og:description" content="Software systems and funded projects: Innspill, StartupGPT, LLM knowledge extraction, phishing detection and digital transformation collaborations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anhn.github.io/projects.html">
+<meta property="og:image" content="https://anhn.github.io/img/profile.jpg">
+<link rel="canonical" href="https://anhn.github.io/projects.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <a class="sr" href="#main">Skip to content</a>
-  <header class="site">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="index.html" aria-label="Home">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor"/></svg>
-        <span>Anh Nguyen‑Duc</span>
-      </a>
-      <!-- Keep original navigation links -->
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Anh Nguyen-Duc</a>
+    <nav aria-label="Main"><ul><li class="r"><a href="publications.html"><span class="dot"></span>Research</a></li><li class="p"><a href="projects.html" aria-current="page"><span class="dot"></span>Practice</a></li><li class="a"><a href="services.html"><span class="dot"></span>Advisory</a></li><li class="n"><a href="activities.html">Talks &amp; service</a></li><li class="n"><a href="gallery.html">Media</a></li><li class="n"><a href="index.html#contact">Contact</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap p">
+  <header class="page-head">
+    <span class="label">Practice</span>
+    <h1>Software systems, experiments and funded projects</h1>
+    <p class="prose">Working systems built to test research ideas with real users, and the funded projects they come from. Source code is on <a href="https://github.com/anhn">GitHub</a>.</p>
   </header>
-
-  <main id="main" class="container">
-    <div class="page-hero">
-      <h1>Projects</h1>
-      <p class="muted">Selected, funded projects. Use search or quick filters to browse by status or year.</p>
-      <div class="controls">
-        <div class="search"><input id="search" type="search" placeholder="Search title, funder, role, year…" aria-label="Search projects"></div>
-        <button class="chip" data-filter="status:active" aria-pressed="false">Active</button>
-        <button class="chip" data-filter="status:completed" aria-pressed="false">Completed</button>
-        <button class="chip" data-filter="year:2025" aria-pressed="false">2025</button>
-        <button class="chip" data-filter="year:2024" aria-pressed="false">2024</button>
-        <button class="chip" data-filter="year:2021" aria-pressed="false">2021</button>
-        <button class="chip" data-filter="year:2019" aria-pressed="false">2019</button>
-        <button class="chip" data-filter="reset" aria-pressed="false" title="Clear filters">Reset</button>
-      </div>
+</div>
+<section class="part p">
+  <div class="wrap">
+    <div class="filters" data-target="#projects" role="group" aria-label="Filter projects">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="system" aria-pressed="false">Systems</button>
+      <button type="button" data-filter="research" aria-pressed="false">Research projects</button>
+      <button type="button" data-filter="funded" aria-pressed="false">Funded collaborations</button>
+      <span class="count"></span>
     </div>
-    
-    <section aria-labelledby="proj-list-title">
-      <h2 id="proj-list-title" class="sr">Project list</h2>
-      <div class="grid cols-2">
-        
-        <article class="card"
-          data-status="active"
-          data-year-start="2024"
-          data-year-end="2025">
-          <h3>Innspill platform - AI-powered adaptive quick feedback for personalized learning</h3>
-          <span class="badge">Jan 2024 – now</span>
-          <span class="badge">Active</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> 200,000 NOK (Innovation Norway,investors)</p>
-            <p><strong>Role:</strong> Main researcher, system developer</p>
-          </div>
-        </article>
-
-        <article class="card"
-          data-status="completed"
-          data-year-start="2025"
-          data-year-end="2025">
-          <h3>LLM-based knowledge extraction in education domain</h3>
-          <span class="badge">Jan 2025 – Aug 2025</span>
-          <span class="badge">Completed</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> 50,000 NOK (Vietnamese funders)</p>
-            <p><strong>Role:</strong> Main researcher, supervisor</p>
-          </div>
-        </article>     
-        <!-- Sustainable Software Lifecycle Management -->
-        <article class="card"
-          data-status="completed"
-          data-year-start="2024"
-          data-year-end="2024">
-          <h3>Sustainable Software Lifecycle Management — An AI‑driven Approach</h3>
-          <span class="badge">Apr 2024 – Aug 2024</span>
-          <span class="badge">Completed</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> 50,000 NOK (university grant)</p>
-            <p><strong>Role:</strong> Main researcher — research & proposal preparation</p>
-          </div>
-        </article>
-        
-        <!-- Implementing and Tracking SDGs in Entrepreneurial Projects -->
-        <article class="card"
-          data-status="active"
-          data-year-start="2021"
-          data-year-end="2025">
-          <h3>Implementing and Tracking SDGs in Entrepreneurial Projects (NFC)</h3>
-          <span class="badge">Apr 2021 – Apr 2025</span>
-          <span class="badge">Active</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> 5,140,000 NOK</p>
-            <p><strong>Role:</strong> Project partner; main supervisor for Industrial Sector PhD (with Entreprenerdy AS)</p>
-          </div>
-        </article>
-
-        <!-- Digital Transformation in Rural Areas -->
-        <article class="card"
-          data-status="completed"
-          data-year-start="2020"
-          data-year-end="2024">
-          <h3>Digital Transformation in Rural Areas (NFC)</h3>
-          <span class="badge">Aug 2020 – Aug 2024</span>
-          <span class="badge">Completed</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> 5,349,000 NOK</p>
-            <p><strong>Role:</strong> Project partner; public sector PhD with Vinje Municipality. Led the application and co‑supervised the PhD candidate</p>
-          </div>
-        </article>
-
-        <!-- Internet Trend & ML in Email Phishing Detection -->
-        <article class="card"
-          data-status="completed"
-          data-year-start="2021"
-          data-year-end="2021">
-          <h3>Internet Trend and Machine Learning in Email Phishing Detection (NFC)</h3>
-          <span class="badge">Mar 2021 – Sep 2021</span>
-          <span class="badge">Completed</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> 400,000 NOK</p>
-            <p><strong>Role:</strong> WP Lead (FORREGION, Telemark). Led WP2 (trend analysis via social/Google Trends) & WP3 (model building/experiments). Partnered with a cybersecurity lab at Cambridge University</p>
-          </div>
-        </article>
-
-        <!-- COM3 Interreg -->
-        <article class="card"
-          data-status="completed"
-          data-year-start="2019"
-          data-year-end="2022">
-          <h3>Building COMpetencies for COMpetitive COMpanies (Interreg)</h3>
-          <span class="badge">Jul 2019 – Dec 2022</span>
-          <span class="badge">Completed</span>
-          <div class="kvs">
-            <p><strong>Funding:</strong> €4.2M</p>
-            <p><strong>Role:</strong> Project partner & regional coordinator (Telemark). Co‑developed and deployed a model for regional authorities to enable rural SMEs to use basic and advanced digital technologies (WP3 – model development)</p>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="container">
-    <small>© <span id="year"></span> Anh Nguyen‑Duc · Projects</small>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Filtering by chips + search
-    const searchInput = document.getElementById('search');
-    const chips = Array.from(document.querySelectorAll('.chip'));
-    let activeFilters = [];
-
-    function matchesFilters(card){
-      // status filter
-      const statusFilters = activeFilters.filter(f=>f.startsWith('status:')).map(f=>f.split(':')[1]);
-      const yearFilters = activeFilters.filter(f=>f.startsWith('year:')).map(f=>f.split(':')[1]);
-
-      const statusOk = statusFilters.length ? statusFilters.includes(card.dataset.status) : true;
-
-      let yearOk = true;
-      if (yearFilters.length){
-        const ys = parseInt(card.dataset.yearStart,10);
-        const ye = parseInt(card.dataset.yearEnd,10);
-        yearOk = yearFilters.some(y => {
-          const yr = parseInt(y,10);
-          return yr >= ys && yr <= ye;
-        });
-      }
-      return statusOk && yearOk;
-    }
-
-    function applyFilters(){
-      const q = (searchInput.value || '').toLowerCase();
-      const cards = document.querySelectorAll('article.card');
-      cards.forEach(card=>{
-        const text = card.textContent.toLowerCase();
-        const filtersOk = matchesFilters(card);
-        const queryOk = q ? text.includes(q) : true;
-        card.style.display = (filtersOk && queryOk) ? '' : 'none';
-      });
-    }
-
-    chips.forEach(chip=>{
-      chip.addEventListener('click', ()=>{
-        const f = chip.dataset.filter;
-        if (f === 'reset'){
-          activeFilters = [];
-          chips.forEach(c=>c.setAttribute('aria-pressed','false'));
-        } else {
-          const on = chip.getAttribute('aria-pressed') === 'true';
-          chip.setAttribute('aria-pressed', on ? 'false' : 'true');
-          if (!on) activeFilters.push(f); else activeFilters = activeFilters.filter(x=>x!==f);
-        }
-        applyFilters();
-      });
-    });
-
-    searchInput.addEventListener('input', applyFilters);
-  </script>
+    <div class="rows" id="projects">
+<article class="row" data-type="system"><div class="yr">2024 – now<span class="chip">Active</span></div><div><h3>Innspill</h3><p>AI platform that gives students adaptive, quick feedback for personalised learning.</p></div><div class="meta"><span>Role: main researcher, system developer</span><span>200k NOK · Innovation Norway, investors</span></div></article>
+<article class="row" data-type="system"><div class="yr">Ongoing<span class="chip">Active</span></div><div><h3>StartupGPT</h3><p>LLM-based virtual mentor that gives early-stage founders evidence-based guidance on validation, prioritisation and roadmaps.</p></div><div class="meta"><span>LLM · RAG · evaluation</span></div></article>
+<article class="row" data-type="research"><div class="yr">Ongoing<span class="chip">Active</span></div><div><h3>Inclusive AI for elderly and neurodiverse users</h3><p>Responsible AI methods, participatory design and low-code tooling for inclusive digital services.</p></div><div class="meta"><span>Participatory design · accessibility</span></div></article>
+<article class="row" data-type="funded"><div class="yr">2021 – 2025<span class="chip">Active</span></div><div><h3>Implementing and tracking SDGs in entrepreneurial projects</h3><p>Integrating and tracking the UN Sustainable Development Goals in entrepreneurial projects.</p></div><div class="meta"><span>Role: project partner, main supervisor of industrial PhD with Entreprenerdy AS</span><span>5.14M NOK · Research Council of Norway</span></div></article>
+<article class="row" data-type="system"><div class="yr">2025<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>LLM-based knowledge extraction in education</h3><p>Using large language models to extract structured knowledge from educational material.</p></div><div class="meta"><span>Role: main researcher, supervisor</span><span>50k NOK · Vietnamese funders</span></div></article>
+<article class="row" data-type="research"><div class="yr">2024<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>Sustainable software lifecycle management with AI</h3><p>Applying AI to make software lifecycle management more sustainable.</p></div><div class="meta"><span>Role: main researcher, proposal</span><span>50k NOK · university grant</span></div></article>
+<article class="row" data-type="funded"><div class="yr">2020 – 2024<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>Digital transformation in rural areas</h3><p>Supporting digital transformation in rural municipalities and businesses.</p></div><div class="meta"><span>Role: project partner, led the application, co-supervised public-sector PhD with Vinje Municipality</span><span>5.35M NOK · Research Council of Norway</span></div></article>
+<article class="row" data-type="funded"><div class="yr">2021<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>Internet trends and ML in phishing detection</h3><p>Combining internet trend data with machine learning to detect phishing email.</p></div><div class="meta"><span>Role: work-package lead (WP2, WP3), with a University of Cambridge cybersecurity lab</span><span>400k NOK · FORREGION</span></div></article>
+<article class="row" data-type="funded"><div class="yr">2019 – 2022<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>COMPETE: Building competencies for competitive companies</h3><p>Helping rural SMEs adopt basic and advanced digital technologies.</p></div><div class="meta"><span>Role: project partner, regional coordinator (Telemark)</span><span>€4.2M · Interreg</span></div></article>
+    </div>
+  </div>
+</section>
+</main>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Interested in piloting one of these systems?</h2>
+    <p class="prose">I look for partners who want to test these systems with real users or co-fund the next version.</p>
+    <div class="mail">
+      <code id="email">anhnd85@gmail.com</code>
+      <a class="btn primary" href="mailto:anhnd85@gmail.com">Write an email</a>
+      <button class="btn" type="button" data-copy="email">Copy address</button>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/anhnguyenduc/">LinkedIn ↗</a>
+      <a href="https://github.com/anhn">GitHub ↗</a>
+      <a href="https://scholar.google.com/citations?user=ia02J_oAAAAJ">Google Scholar ↗</a>
+      <a href="https://orcid.org/0000-0002-7063-9200">ORCID ↗</a>
+    </div>
+  </div>
+</section>
+<footer class="site"><div class="wrap">
+  <span>© 2026 Anh Nguyen-Duc</span>
+  <span>Professor of Software Engineering · University of South-Eastern Norway</span>
+</div></footer>
+<script src="js/site.js"></script>
 </body>
 </html>
-
-

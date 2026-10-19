@@ -1,280 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2WG7PPJZZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-G2WG7PPJZZ');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery | Professional Activities</title>
-  <meta name="description" content="Photo gallery of professional activities by Anh Nguyen‑Duc." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1020; --panel:#121836; --muted:#9197b3; --text:#ecf0ff; --accent:#6dd3ff; --accent-2:#9b8cff; --line:#1f264a; --card:#0f1630; --chip:#1b2246;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0a0f22, #0b1020 40%, #0a0f22 100%); color:var(--text)}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-
-    /* Header / Nav (keeps original link targets) */
-    header.site{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;gap:18px;flex-wrap:wrap; align-items:center; justify-content:space-between; padding:14px 24px}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
-    .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
-    .nav ul a{padding:8px 12px;border-radius:10px;display:block}
-    .nav ul a:hover{background:var(--chip)}
-
-    /* Page header */
-    .page-hero{padding:28px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:24px auto}
-    .page-hero h1{margin:0 0 8px 0;font-size:clamp(26px,4vw,40px)}
-    .muted{color:var(--muted)}
-
-    /* Controls */
-    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
-    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:13px;cursor:pointer}
-    .chip[aria-pressed="true"]{outline:2px solid var(--accent)}
-    .search{flex:1;min-width:220px}
-    .search input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text)}
-
-    /* Gallery grid */
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    @media (max-width: 1080px){.gallery{grid-template-columns:repeat(3,1fr)}}
-    @media (max-width: 720px){.gallery{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width: 480px){.gallery{grid-template-columns:1fr}}
-
-    .tile{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer}
-    .tile img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .25s ease}
-    .tile:hover img{transform:scale(1.04)}
-    .tile figcaption{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.45);padding:4px 8px;border-radius:8px;font-size:12px}
-
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:100}
-    .lightbox.open{display:flex}
-    .lightbox-inner{max-width:92vw;max-height:86vh;position:relative}
-    .lightbox-img{max-width:100%;max-height:86vh;border-radius:12px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.5)}
-    .lightbox-caption{margin-top:10px;text-align:center;color:#dbe2ff;font-size:14px}
-    .lb-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(18,24,54,.8);border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer}
-    .lb-prev{left:-56px}
-    .lb-next{right:-56px}
-    .lb-close{position:absolute;top:-44px;right:-4px;border:none;background:rgba(18,24,54,.9);border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:10px;cursor:pointer}
-    @media (max-width:720px){.lb-prev{left:-4px}.lb-next{right:-4px}.lb-close{top:-48px;right:0}}
-
-    footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);text-align:center}
-    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Media · Anh Nguyen-Duc</title>
+<meta name="description" content="Photos from talks, conferences, workshops and teaching.">
+<meta property="og:title" content="Media · Anh Nguyen-Duc">
+<meta property="og:description" content="Photos from talks, conferences, workshops and teaching.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anhn.github.io/gallery.html">
+<meta property="og:image" content="https://anhn.github.io/img/profile.jpg">
+<link rel="canonical" href="https://anhn.github.io/gallery.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <a class="sr" href="#main">Skip to content</a>
-  <header class="site">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="index.html" aria-label="Home">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke="currentColor"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor"/></svg>
-        <span>Anh Nguyen‑Duc</span>
-      </a>
-      <!-- Keep original navigation links -->
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Anh Nguyen-Duc</a>
+    <nav aria-label="Main"><ul><li class="r"><a href="publications.html"><span class="dot"></span>Research</a></li><li class="p"><a href="projects.html"><span class="dot"></span>Practice</a></li><li class="a"><a href="services.html"><span class="dot"></span>Advisory</a></li><li class="n"><a href="activities.html">Talks &amp; service</a></li><li class="n"><a href="gallery.html" aria-current="page">Media</a></li><li class="n"><a href="index.html#contact">Contact</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap n">
+  <header class="page-head">
+    <span class="label">Media</span>
+    <h1>Talks, workshops and teaching in pictures</h1>
+    <p class="prose">Select a photo to enlarge it. Use the arrow keys to move between photos and Esc to close.</p>
   </header>
-
-  <main id="main" class="container">
-    <div class="page-hero">
-      <h1>Professional Activities Photo Album</h1>
-      <p class="muted">Click any photo to open the lightbox. Use arrows or keyboard (←/→/Esc) to navigate.</p>
-      <div class="controls">
-        <div class="search"><input id="search" type="search" placeholder="Search caption, tags, location…" aria-label="Search photos"></div>
-        <button class="chip" data-filter="tag:conference" aria-pressed="false">Conference</button>
-        <button class="chip" data-filter="tag:teaching" aria-pressed="false">Teaching</button>
-        <button class="chip" data-filter="tag:industry" aria-pressed="false">Industry</button>
-        <button class="chip" data-filter="tag:workshop" aria-pressed="false">Workshop</button>
-        <button class="chip" data-filter="reset" aria-pressed="false" title="Clear filters">Reset</button>
-      </div>
+</div>
+<section class="part n">
+  <div class="wrap">
+    <div class="filters" data-target="#photos" role="group" aria-label="Filter photos">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="collaboration" aria-pressed="false">Collaboration</button><button type="button" data-filter="conference" aria-pressed="false">Conference</button><button type="button" data-filter="talk" aria-pressed="false">Talk</button><button type="button" data-filter="teaching" aria-pressed="false">Teaching</button><button type="button" data-filter="workshop" aria-pressed="false">Workshop</button>
+      <span class="count"></span>
     </div>
-
-    <section aria-labelledby="gallery-title">
-      <h2 id="gallery-title" class="sr">Gallery grid</h2>
-      <div id="gallery" class="gallery">
-        <!-- Replace src with your own files; add tags via data-tags -->
-        <figure class="tile" data-tags="conference, talk" data-caption="Activity 1 — Keynote talk">
-          <img src="photo1.jpg" alt="Activity 1 keynote" loading="lazy">
-          <figcaption>Activity 1 — Keynote talk</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="teaching, classroom" data-caption="Activity 2 — Teaching session">
-          <img src="photo2.jpg" alt="Activity 2 teaching" loading="lazy">
-          <figcaption>Activity 2 — Teaching session</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="industry, meeting" data-caption="Activity 3 — Industry collaboration">
-          <img src="photo3.jpg" alt="Activity 3 industry meeting" loading="lazy">
-          <figcaption>Activity 3 — Industry collaboration</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="workshop, group" data-caption="Activity 4 — Hands‑on workshop">
-          <img src="photo4.jpg" alt="Activity 4 workshop" loading="lazy">
-          <figcaption>Activity 4 — Hands‑on workshop</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="conference, panel" data-caption="Activity 5 — Panel discussion">
-          <img src="photo5.jpg" alt="Activity 5 panel" loading="lazy">
-          <figcaption>Activity 5 — Panel discussion</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="teaching, mentoring" data-caption="Activity 6 — Mentoring session">
-          <img src="photo6.jpg" alt="Activity 6 mentoring" loading="lazy">
-          <figcaption>Activity 6 — Mentoring session</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="industry, site-visit" data-caption="Activity 7 — Company site visit">
-          <img src="photo7.jpg" alt="Activity 7 site visit" loading="lazy">
-          <figcaption>Activity 7 — Company site visit</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="workshop, training" data-caption="Activity 8 — Training event">
-          <img src="photo8.jpg" alt="Activity 8 training" loading="lazy">
-          <figcaption>Activity 8 — Training event</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="conference, poster" data-caption="Activity 9 — Poster session">
-          <img src="photo9.jpg" alt="Activity 9 poster" loading="lazy">
-          <figcaption>Activity 9 — Poster session</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="teaching, lab" data-caption="Activity 10 — Lab supervision">
-          <img src="photo10.jpg" alt="Activity 10 lab" loading="lazy">
-          <figcaption>Activity 10 — Lab supervision</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="industry, demo" data-caption="Activity 11 — Product demo">
-          <img src="photo11.jpg" alt="Activity 11 demo" loading="lazy">
-          <figcaption>Activity 11 — Product demo</figcaption>
-        </figure>
-
-        <figure class="tile" data-tags="workshop, community" data-caption="Activity 12 — Community meetup">
-          <img src="photo12.jpg" alt="Activity 12 meetup" loading="lazy">
-          <figcaption>Activity 12 — Community meetup</figcaption>
-        </figure>
-      </div>
-    </section>
-  </main>
-
-  <!-- Accessible Lightbox -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <div class="lightbox-inner">
-      <img id="lbImg" class="lightbox-img" alt="">
-      <p id="lbCap" class="lightbox-caption"></p>
-      <button id="lbPrev" class="lb-btn lb-prev" aria-label="Previous image">◀</button>
-      <button id="lbNext" class="lb-btn lb-next" aria-label="Next image">▶</button>
-      <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
+    <div class="grid" id="photos">
+<figure class="ph" data-type="collaboration"><button type="button" data-full="img/gallery/photo1.jpg" data-caption="Research visit with a collaborator"><img src="img/gallery/photo1.jpg" alt="Research visit with a collaborator" loading="lazy"></button><figcaption><span class="label">Collaboration</span>Research visit with a collaborator</figcaption></figure>
+<figure class="ph" data-type="conference"><button type="button" data-full="img/gallery/photo2.jpg" data-caption="XP 2024 in Bolzano: AISIS workshop organisers"><img src="img/gallery/photo2.jpg" alt="XP 2024 in Bolzano: AISIS workshop organisers" loading="lazy"></button><figcaption><span class="label">Conference</span>XP 2024 in Bolzano: AISIS workshop organisers</figcaption></figure>
+<figure class="ph" data-type="talk"><button type="button" data-full="img/gallery/photo3.jpg" data-caption="GISMA talk: Nordic early-stage startups with effectual logic"><img src="img/gallery/photo3.jpg" alt="GISMA talk: Nordic early-stage startups with effectual logic" loading="lazy"></button><figcaption><span class="label">Talk</span>GISMA talk: Nordic early-stage startups with effectual logic</figcaption></figure>
+<figure class="ph" data-type="conference"><button type="button" data-full="img/gallery/photo4.jpg" data-caption="Award ceremony"><img src="img/gallery/photo4.jpg" alt="Award ceremony" loading="lazy"></button><figcaption><span class="label">Conference</span>Award ceremony</figcaption></figure>
+<figure class="ph" data-type="teaching"><button type="button" data-full="img/gallery/photo5.jpg" data-caption="Hands-on lab session"><img src="img/gallery/photo5.jpg" alt="Hands-on lab session" loading="lazy"></button><figcaption><span class="label">Teaching</span>Hands-on lab session</figcaption></figure>
+<figure class="ph" data-type="talk"><button type="button" data-full="img/gallery/photo6.jpg" data-caption="Invited lecture to a full auditorium"><img src="img/gallery/photo6.jpg" alt="Invited lecture to a full auditorium" loading="lazy"></button><figcaption><span class="label">Talk</span>Invited lecture to a full auditorium</figcaption></figure>
+<figure class="ph" data-type="workshop"><button type="button" data-full="img/gallery/photo7.jpg" data-caption="AI-assisted Agile Software Engineering workshop at XP 2023"><img src="img/gallery/photo7.jpg" alt="AI-assisted Agile Software Engineering workshop at XP 2023" loading="lazy"></button><figcaption><span class="label">Workshop</span>AI-assisted Agile Software Engineering workshop at XP 2023</figcaption></figure>
+<figure class="ph" data-type="conference"><button type="button" data-full="img/gallery/photo8.jpg" data-caption="Conference dinner with colleagues"><img src="img/gallery/photo8.jpg" alt="Conference dinner with colleagues" loading="lazy"></button><figcaption><span class="label">Conference</span>Conference dinner with colleagues</figcaption></figure>
+<figure class="ph" data-type="workshop"><button type="button" data-full="img/gallery/photo9.jpg" data-caption="Workshop participants"><img src="img/gallery/photo9.jpg" alt="Workshop participants" loading="lazy"></button><figcaption><span class="label">Workshop</span>Workshop participants</figcaption></figure>
+<figure class="ph" data-type="talk"><button type="button" data-full="img/gallery/photo10.jpg" data-caption="SEMLA 2024 in Montréal: speakers and organisers"><img src="img/gallery/photo10.jpg" alt="SEMLA 2024 in Montréal: speakers and organisers" loading="lazy"></button><figcaption><span class="label">Talk</span>SEMLA 2024 in Montréal: speakers and organisers</figcaption></figure>
+<figure class="ph" data-type="talk"><button type="button" data-full="img/gallery/photo11.jpg" data-caption="Presenting a research agenda"><img src="img/gallery/photo11.jpg" alt="Presenting a research agenda" loading="lazy"></button><figcaption><span class="label">Talk</span>Presenting a research agenda</figcaption></figure>
+<figure class="ph" data-type="teaching"><button type="button" data-full="img/gallery/photo12.jpg" data-caption="Guest lecture audience"><img src="img/gallery/photo12.jpg" alt="Guest lecture audience" loading="lazy"></button><figcaption><span class="label">Teaching</span>Guest lecture audience</figcaption></figure>
     </div>
   </div>
-
-  <footer class="container">
-    <small>© <span id="year"></span> Anh Nguyen‑Duc · Gallery</small>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Filtering (chips + search)
-    const searchInput = document.getElementById('search');
-    const chips = Array.from(document.querySelectorAll('.chip'));
-    let activeFilters = [];
-
-    function applyFilters(){
-      const q = (searchInput?.value || '').toLowerCase();
-      const tiles = document.querySelectorAll('.tile');
-      tiles.forEach(tile=>{
-        const cap = (tile.dataset.caption || '').toLowerCase();
-        const tags = (tile.dataset.tags || '').toLowerCase();
-        const textOk = q ? (cap.includes(q) || tags.includes(q)) : true;
-
-        const tagFilters = activeFilters.filter(f=>f.startsWith('tag:')).map(f=>f.split(':')[1]);
-        const tagOk = tagFilters.length ? tagFilters.some(t => tags.includes(t)) : true;
-
-        tile.style.display = (textOk && tagOk) ? '' : 'none';
-      });
-    }
-
-    chips.forEach(chip=>{
-      chip.addEventListener('click', ()=>{
-        const f = chip.dataset.filter;
-        if (f === 'reset'){
-          activeFilters = [];
-          chips.forEach(c=>c.setAttribute('aria-pressed','false'));
-        } else {
-          const on = chip.getAttribute('aria-pressed') === 'true';
-          chip.setAttribute('aria-pressed', on ? 'false' : 'true');
-          if (!on) activeFilters.push(f); else activeFilters = activeFilters.filter(x=>x!==f);
-        }
-        applyFilters();
-      });
-    });
-    if (searchInput) searchInput.addEventListener('input', applyFilters);
-
-    // Lightbox
-    const gallery = Array.from(document.querySelectorAll('.tile img'));
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const lbCap = document.getElementById('lbCap');
-    const btnPrev = document.getElementById('lbPrev');
-    const btnNext = document.getElementById('lbNext');
-    const btnClose = document.getElementById('lbClose');
-    let idx = 0;
-
-    function openLB(i){
-      idx = i;
-      const fig = gallery[idx].closest('.tile');
-      lbImg.src = gallery[idx].src;
-      lbImg.alt = gallery[idx].alt || '';
-      lbCap.textContent = fig?.dataset.caption || gallery[idx].alt || '';
-      lb.classList.add('open');
-      // focus close for a11y
-      btnClose.focus();
-    }
-    function closeLB(){ lb.classList.remove('open'); }
-    function prev(){ openLB((idx - 1 + gallery.length) % gallery.length); }
-    function next(){ openLB((idx + 1) % gallery.length); }
-
-    gallery.forEach((img, i)=>{
-      img.addEventListener('click', ()=> openLB(i));
-      img.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ openLB(i); }});
-      img.tabIndex = 0; // keyboard focusable
-    });
-
-    btnClose.addEventListener('click', closeLB);
-    btnPrev.addEventListener('click', prev);
-    btnNext.addEventListener('click', next);
-
-    document.addEventListener('keydown', (e)=>{
-      if(!lb.classList.contains('open')) return;
-      if(e.key === 'Escape') closeLB();
-      if(e.key === 'ArrowLeft') prev();
-      if(e.key === 'ArrowRight') next();
-    });
-
-    // Close when clicking backdrop outside image
-    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLB(); });
-  </script>
+</section>
+</main>
+<footer class="site"><div class="wrap">
+  <span>© 2026 Anh Nguyen-Duc</span>
+  <span>Professor of Software Engineering · University of South-Eastern Norway</span>
+</div></footer>
+<script src="js/site.js"></script>
 </body>
 </html>
-
