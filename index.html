@@ -21,7 +21,7 @@
 <header class="site">
   <div class="wrap bar">
     <a class="brand" href="index.html">Anh Nguyen-Duc</a>
-    <nav aria-label="Main"><ul><li class="r"><a href="publications.html"><span class="dot"></span>Research</a></li><li class="p"><a href="projects.html"><span class="dot"></span>Practice</a></li><li class="a"><a href="services.html"><span class="dot"></span>Advisory</a></li><li class="n"><a href="activities.html">Talks &amp; service</a></li><li class="n"><a href="gallery.html">Media</a></li><li class="n"><a href="index.html#contact">Contact</a></li></ul></nav>
+    <nav aria-label="Main"><ul><li class="r"><a href="publications.html"><span class="dot"></span>Research</a></li><li class="p"><a href="projects.html"><span class="dot"></span>Practice</a></li><li class="a"><a href="services.html"><span class="dot"></span>Advisory</a></li><li class="n"><a href="index.html#lab">Lab now</a></li><li class="n"><a href="activities.html">Talks &amp; service</a></li><li class="n"><a href="gallery.html">Media</a></li><li class="n"><a href="index.html#contact">Contact</a></li></ul></nav>
   </div>
 </header>
 <main id="main">
@@ -47,6 +47,33 @@
     <div><b>7</b><span>PhD candidates supervised, 5 completed</span></div>
     <div><b>9</b><span>funded R&amp;D projects since 2019</span></div>
   </div>
+  <section class="lab" id="lab" aria-labelledby="lab-title">
+    <div>
+      <div class="lab-head">
+        <div style="display:grid;gap:8px"><span class="label">Lab now</span><h2 id="lab-title">What is happening in the lab</h2></div>
+        <span class="upd" id="lab-updated">Updated 2026-11-15</span>
+      </div>
+      <ul class="feed" id="lab-feed">
+<li><span class="d">Nov 2026</span><span class="k"><span class="chip k-paper">Paper accepted</span></span><span><b>From Prototype to Practice: A Systematic Review of Blockchain Applications in Construction Projects</b><br><span class="s">IET Blockchain</span></span></li>
+<li><span class="d">Nov 2026</span><span class="k"><span class="chip k-paper">Paper accepted</span></span><span><b>Integrating Large Language Models into Agile Software Development: An Empirical Study of Small and Medium-Sized Enterprises</b><br><span class="s">Journal of Systems and Software</span></span></li>
+<li><span class="d">Oct 2026</span><span class="k"><span class="chip k-other">Talk</span></span><span><b>Guest lecture: Agile in the Age of AI, BTH, Karlskrona</b></span></li>
+<li><span class="d">Sep 2026</span><span class="k"><span class="chip k-paper">Paper accepted</span></span><span><b>Fast and Focused: Repository-Level Fill-in-the-Middle Code Completion</b><br><span class="s">EMNLP 2026</span></span></li>
+<li><span class="d">Aug 2026</span><span class="k"><span class="chip k-project">Project started</span></span><span><b>Adaptive multi-party clinical dialogue modelling</b><br><span class="s">Research Council of Norway</span></span></li>
+<li><span class="d">Aug 2026</span><span class="k"><span class="chip k-paper">Published</span></span><span><b>The Landscape of Generative AI in Information Systems: A Synthesis of Secondary Reviews and Research Agendas</b><br><span class="s">e-Informatica Software Engineering Journal</span></span></li>
+      </ul>
+    </div>
+    <aside class="glance" aria-label="Lab at a glance">
+      <span class="label">At a glance</span>
+      <div id="lab-stats" style="display:grid;gap:14px">
+<div class="stat"><span>Active projects</span><b>4</b></div>
+<div class="stat"><span>Papers in the pipeline</span><b>14</b></div>
+<div class="stat"><span>Accepted or published in 2026</span><b>10</b></div>
+      </div>
+      <span class="label">Working on</span>
+      <div class="chips" id="lab-topics"><span class="chip k-project">InnSpill.AI</span><span class="chip k-project">Blockchain feasibility assessment for construction and transport</span><span class="chip k-project">ATLAS: Assisting teaching and learning with AI</span><span class="chip k-project">Adaptive multi-party clinical dialogue modelling</span></div>
+      <p class="note">Work in progress is only counted here. Papers are named once they are accepted.</p>
+    </aside>
+  </section>
   <div class="triad">
     <a class="tri r" href="publications.html">
       <span class="label">Research</span>
@@ -125,13 +152,14 @@
   <div class="wrap">
     <div class="part-head">
       <span class="label">Practice</span>
-      <h2>Systems I build and test</h2>
+      <h2>Systems and projects now running</h2>
       <p class="prose">Research ideas become working software, so they can be tried with real users and measured.</p>
     </div>
-    <div class="rows">
-<article class="row" data-type="system"><div class="yr">2025 – 2026<span class="chip">Active</span></div><div><h3>InnSpill.AI</h3><p>AI platform that gives students adaptive, quick feedback for personalised learning. I founded the venture to take it to market.</p></div><div class="meta"><span>Role: founder, main researcher, system developer</span><span>200k NOK · Innovation Norway and USN KOIN</span></div></article>
-<article class="row" data-type="system"><div class="yr">2024 – now<span class="chip">Active</span></div><div><h3>StartupGPT</h3><p>Retrieval-augmented LLM mentor that gives early-stage founders research-based guidance on validation, prioritisation and roadmaps. Evaluated at IWSiB 2025 and IST 2025.</p></div><div class="meta"><span>LLM · RAG · evaluation</span></div></article>
-<article class="row" data-type="system"><div class="yr">2025<span class="chip" style="--c:var(--muted);--soft:var(--line)">Completed</span></div><div><h3>LLM-based knowledge extraction in education</h3><p>Using large language models to extract structured knowledge from educational material.</p></div><div class="meta"><span>Role: main researcher, supervisor</span><span>50k NOK · Vietnamese funders</span></div></article>
+    <div class="rows" id="practice-rows">
+<article class="row" data-type="system"><div class="yr">2025 – 2026<span class="chip">Active</span></div><div><h3>InnSpill.AI</h3><p>AI platform that gives students adaptive, quick feedback for personalised learning. I founded the venture to take it to market.</p></div><div class="meta"><span>Role: Founder, main researcher, system developer</span><span>Innovation Norway and USN KOIN</span></div></article>
+<article class="row" data-type="system"><div class="yr">2025 – 2027<span class="chip">Active</span></div><div><h3>Blockchain feasibility assessment for construction and transport</h3><p>Framework and web tool that help public agencies decide when blockchain is worth adopting. Papers in Informatica and IET Blockchain.</p></div><div class="meta"><span>Ministry of Construction of Vietnam (RD57-26)</span></div></article>
+<article class="row" data-type="system"><div class="yr">2025 – 2028<span class="chip">Active</span></div><div><h3>ATLAS: Assisting teaching and learning with AI</h3><p>Erasmus+ cooperation partnership designing AI-based teaching and learning use cases in higher education.</p></div><div class="meta"><span>Role: Partner in WP2 and sustainability activity A5</span><span>Erasmus+ KA220-HED</span></div></article>
+<article class="row" data-type="system"><div class="yr">2026 – 2029<span class="chip">Active</span></div><div><h3>Adaptive multi-party clinical dialogue modelling</h3><p>Industrial PhD project on dialogue models for healthcare communication training, with Variment AS.</p></div><div class="meta"><span>Role: Project partner, main PhD supervisor</span><span>Research Council of Norway</span></div></article>
     </div>
     <a class="more" href="projects.html">All projects →</a>
   </div>
@@ -165,6 +193,37 @@
     <a class="more" href="publications.html">All publications and supervision →</a>
   </div>
 </section>
+
+<section class="part r">
+  <div class="wrap cols">
+    <div style="display:grid;gap:18px;align-content:start">
+      <span class="label" style="color:var(--research)">Recently accepted</span>
+      <h2>New papers</h2>
+      <ul class="pubs" id="recent-papers">
+<li><span>From Prototype to Practice: A Systematic Review of Blockchain Applications in Construction Projects</span><span class="v">IET Blockchain · accepted Nov 2026</span></li>
+<li><span>Integrating Large Language Models into Agile Software Development: An Empirical Study of Small and Medium-Sized Enterprises</span><span class="v">Journal of Systems and Software · accepted Nov 2026</span></li>
+<li><span>Fast and Focused: Repository-Level Fill-in-the-Middle Code Completion</span><span class="v">EMNLP 2026 · accepted Sep 2026</span></li>
+<li><span>The Landscape of Generative AI in Information Systems: A Synthesis of Secondary Reviews and Research Agendas</span><span class="v">e-Informatica Software Engineering Journal · Aug 2026</span></li>
+<li><span>Technical Debt Approach and Consciousness in Startups Transitioning to the Growth Phase: A Four-Facet Model</span><span class="v">MECO 2026 · accepted 2026</span></li>
+      </ul>
+      <a class="more" href="publications.html">All publications →</a>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <span class="label">Editorial work</span>
+      <h2>Editing and organising</h2>
+      <ul class="pubs" id="service-list">
+<li><span>Short Paper Chair, EASE 2027 (Hanoi)</span><span class="v">2027</span></li>
+<li><span>Lightning Talk Co-chair, CHASE 2027</span><span class="v">2027</span></li>
+<li><span>Editorial Board Member, Behaviour &amp; Information Technology</span><span class="v">2026 – now</span></li>
+<li><span>Academic Editor, PeerJ Computer Science</span><span class="v">2025 – now</span></li>
+<li><span>Section Editor, VNUHCM Journal of Engineering and Technology</span><span class="v">2026 – now</span></li>
+<li><span>Programme committees: ICSE 2027, EASE 2027, XP 2026, ICSOB 2026, SOICT 2026</span><span class="v">2026 – 2027</span></li>
+<li><span>Guest Editor, special issue, Software: Practice and Experience</span><span class="v">2026</span></li>
+      </ul>
+      <a class="more" href="activities.html">Talks and service →</a>
+    </div>
+  </div>
+</section>
 </main>
 <section class="contact" id="contact">
   <div class="wrap">
@@ -186,8 +245,9 @@
 </section>
 <footer class="site"><div class="wrap">
   <span>© 2026 Anh Nguyen-Duc</span>
-  <span>Professor of Software Engineering · University of South-Eastern Norway</span>
+  <span>Professor of Software Engineering · University of South-Eastern Norway · Lab news updates automatically</span>
 </div></footer>
 <script src="js/site.js"></script>
+<script src="js/lab.js"></script>
 </body>
 </html>

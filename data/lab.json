@@ -1,0 +1,176 @@
+{
+ "version": 1,
+ "updated": "2026-11-15T21:32+01:00",
+ "feed": [
+  {
+   "date": "2026-11-05",
+   "kind": "Paper accepted",
+   "title": "From Prototype to Practice: A Systematic Review of Blockchain Applications in Construction Projects",
+   "detail": "IET Blockchain"
+  },
+  {
+   "date": "2026-11-03",
+   "kind": "Paper accepted",
+   "title": "Integrating Large Language Models into Agile Software Development: An Empirical Study of Small and Medium-Sized Enterprises",
+   "detail": "Journal of Systems and Software"
+  },
+  {
+   "date": "2026-10-08",
+   "kind": "Talk",
+   "title": "Guest lecture: Agile in the Age of AI, BTH, Karlskrona",
+   "detail": ""
+  },
+  {
+   "date": "2026-09-28",
+   "kind": "Paper accepted",
+   "title": "Fast and Focused: Repository-Level Fill-in-the-Middle Code Completion",
+   "detail": "EMNLP 2026"
+  },
+  {
+   "date": "2026-08-31",
+   "kind": "Project started",
+   "title": "Adaptive multi-party clinical dialogue modelling",
+   "detail": "Research Council of Norway"
+  },
+  {
+   "date": "2026-08-30",
+   "kind": "Published",
+   "title": "The Landscape of Generative AI in Information Systems: A Synthesis of Secondary Reviews and Research Agendas",
+   "detail": "e-Informatica Software Engineering Journal"
+  }
+ ],
+ "stats": [
+  {
+   "label": "Active projects",
+   "value": 4
+  },
+  {
+   "label": "Papers in the pipeline",
+   "value": 14
+  },
+  {
+   "label": "Accepted or published in 2026",
+   "value": 10
+  }
+ ],
+ "working_on": [
+  "InnSpill.AI",
+  "Blockchain feasibility assessment for construction and transport",
+  "ATLAS: Assisting teaching and learning with AI",
+  "Adaptive multi-party clinical dialogue modelling"
+ ],
+ "projects": [
+  {
+   "title": "InnSpill.AI",
+   "blurb": "AI platform that gives students adaptive, quick feedback for personalised learning. I founded the venture to take it to market.",
+   "years": "2025 – 2026",
+   "role": "Founder, main researcher, system developer",
+   "funder": "Innovation Norway and USN KOIN",
+   "active": true
+  },
+  {
+   "title": "Blockchain feasibility assessment for construction and transport",
+   "blurb": "Framework and web tool that help public agencies decide when blockchain is worth adopting. Papers in Informatica and IET Blockchain.",
+   "years": "2025 – 2027",
+   "role": "",
+   "funder": "Ministry of Construction of Vietnam (RD57-26)",
+   "active": true
+  },
+  {
+   "title": "ATLAS: Assisting teaching and learning with AI",
+   "blurb": "Erasmus+ cooperation partnership designing AI-based teaching and learning use cases in higher education.",
+   "years": "2025 – 2028",
+   "role": "Partner in WP2 and sustainability activity A5",
+   "funder": "Erasmus+ KA220-HED",
+   "active": true
+  },
+  {
+   "title": "Adaptive multi-party clinical dialogue modelling",
+   "blurb": "Industrial PhD project on dialogue models for healthcare communication training, with Variment AS.",
+   "years": "2026 – 2029",
+   "role": "Project partner, main PhD supervisor",
+   "funder": "Research Council of Norway",
+   "active": true
+  }
+ ],
+ "papers": [
+  {
+   "title": "From Prototype to Practice: A Systematic Review of Blockchain Applications in Construction Projects",
+   "venue": "IET Blockchain",
+   "status": "accepted",
+   "date": "2026-11-05",
+   "url": ""
+  },
+  {
+   "title": "Integrating Large Language Models into Agile Software Development: An Empirical Study of Small and Medium-Sized Enterprises",
+   "venue": "Journal of Systems and Software",
+   "status": "accepted",
+   "date": "2026-11-03",
+   "url": ""
+  },
+  {
+   "title": "Fast and Focused: Repository-Level Fill-in-the-Middle Code Completion",
+   "venue": "EMNLP 2026",
+   "status": "accepted",
+   "date": "2026-09-28",
+   "url": ""
+  },
+  {
+   "title": "The Landscape of Generative AI in Information Systems: A Synthesis of Secondary Reviews and Research Agendas",
+   "venue": "e-Informatica Software Engineering Journal",
+   "status": "published",
+   "date": "2026-08-30",
+   "url": ""
+  },
+  {
+   "title": "Technical Debt Approach and Consciousness in Startups Transitioning to the Growth Phase: A Four-Facet Model",
+   "venue": "MECO 2026",
+   "status": "accepted",
+   "date": "2026",
+   "url": ""
+  },
+  {
+   "title": "The Boundary-Spanning Assistant: Understanding the Role and Usage Patterns of LLMs in Project-Based Software Engineering",
+   "venue": "ICSE 2026",
+   "status": "published",
+   "date": "2026",
+   "url": ""
+  }
+ ],
+ "service": [
+  {
+   "label": "Short Paper Chair, EASE 2027 (Hanoi)",
+   "years": "2027"
+  },
+  {
+   "label": "Lightning Talk Co-chair, CHASE 2027",
+   "years": "2027"
+  },
+  {
+   "label": "Editorial Board Member, Behaviour & Information Technology",
+   "years": "2026 – now"
+  },
+  {
+   "label": "Academic Editor, PeerJ Computer Science",
+   "years": "2025 – now"
+  },
+  {
+   "label": "Section Editor, VNUHCM Journal of Engineering and Technology",
+   "years": "2026 – now"
+  },
+  {
+   "label": "Programme committees: ICSE 2027, EASE 2027, XP 2026, ICSOB 2026, SOICT 2026",
+   "years": "2026 – 2027"
+  },
+  {
+   "label": "Guest Editor, special issue, Software: Practice and Experience",
+   "years": "2026"
+  }
+ ],
+ "talks": [
+  {
+   "label": "Guest lecture: Agile in the Age of AI, BTH, Karlskrona",
+   "date": "2026-10-08"
+  }
+ ]
+}
